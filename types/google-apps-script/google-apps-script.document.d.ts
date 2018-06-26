@@ -918,6 +918,35 @@ declare namespace GoogleAppsScript {
     }
 
     /**
+     * Event object received by onOpen() (simple and installable).
+     * The onOpen() trigger runs automatically when a user opens a document they
+     * have permission to edit. onOpen() is most commonly used to add custom menu items.
+     */
+    export interface OpenEvent {
+        /**
+         * A value from the ScriptApp.AuthMode enum.
+         */
+        authMode: Script.AuthMode;
+
+        /**
+         * A Document object, representing the Google Docs file to which the script is bound.
+         */
+        source: Document;
+
+        /**
+         * ID of trigger that produced this event (installable triggers only).
+         */
+        triggerUid?: string;
+
+        /**
+         * A User object, representing the owner of the spreadsheet (only available
+         * in simple triggers, and only if the current user is allowed to know the
+         * owner's email address, depending on a complex set of security restrictions).
+         */
+        user?: Base.User;
+    }
+
+    /**
      * An element representing a page break. A PageBreak can be contained within a
      *  ListItem or Paragraph, unless the ListItem or Paragraph is within
      *  a Table, HeaderSection, FooterSection, or FootnoteSection. A

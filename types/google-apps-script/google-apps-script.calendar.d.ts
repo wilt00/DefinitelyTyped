@@ -252,6 +252,33 @@ declare namespace GoogleAppsScript {
     }
 
     /**
+     * Object passed to Calendar triggers.
+     * Calendar triggers fire when a user's calendar events are updated (created,
+     * edited, or deleted). These triggers do not tell you which event changed or
+     * how it changed. Instead, they indicate that your code needs to do an incremental
+     * sync operation to pick up recent changes to the calendar.
+     * Caution: Occasionally sync tokens are invalidated by the server, resulting
+     * in a 410 error. When this happens, your code should conduct a full sync and
+     * replace all the stored synced data and tokens you have for that calendar.
+     */
+    export interface EventUpdated {
+        /**
+         * A value from the ScriptApp.AuthMode enum.
+         */
+        authMode: Script.AuthMode;
+
+        /**
+         * The string ID of the calendar where the event update occurred.
+         */
+        calendarId: string;
+
+        /**
+         * ID of trigger that produced this event.
+         */
+        triggerUid: string;
+    }
+
+    /**
      * An enum representing the statuses a guest can have for an event.
      */
     export enum GuestStatus { INVITED, MAYBE, NO, OWNER, YES }

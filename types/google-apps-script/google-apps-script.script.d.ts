@@ -108,6 +108,17 @@ declare namespace GoogleAppsScript {
     }
 
     /**
+     * Event object passed to the onInstall() trigger (simple only).
+     * The onInstall() trigger runs automatically when a user installs an add-on.
+     */
+    export interface InstallEvent {
+        /**
+         * A value from the ScriptApp.AuthMode enum.
+         */
+        authMode: AuthMode;
+    }
+
+    /**
      * An enumeration that indicates how the script came to be installed as an add-on for the
      *  current user.
      */
@@ -192,6 +203,73 @@ declare namespace GoogleAppsScript {
       withArgument(name: string, value: string): StateTokenBuilder;
       withMethod(method: string): StateTokenBuilder;
       withTimeout(seconds: Integer): StateTokenBuilder;
+    }
+
+    /**
+     * Time-driven triggers (also called clock triggers) let scripts execute at
+     * a particular time or on a recurring interval.
+     */
+    export interface TimeDrivenEvent {
+        /**
+         * A value from the ScriptApp.AuthMode enum.
+         */
+        authMode: AuthMode;
+
+        /**
+         * Between 1 and 31.
+         * Because this property name contains dashes, it must be accessed via
+         * e['day-of-month'] rather than dot notation.
+         */
+        'day-of-month': Integer;
+
+        /**
+         * Between 1 (Monday) and 7 (Sunday).
+         * Because this property name contains dashes it must be accessed via
+         * e['day-of-week'] rather than dot notation.
+         */
+        'day-of-week': Integer;
+
+        /**
+         * Between 0 and 23.
+         */
+        hour: Integer;
+
+        /**
+         * Between 0 and 59.
+         */
+        minute: Integer;
+
+        /**
+         * Between 1 and 12.
+         */
+        month: Integer;
+
+        /**
+         * Between 0 and 59.
+         */
+        second: Integer;
+
+        /**
+         * The timezone.
+         */
+        timezone: string;
+
+        /**
+         * ID of trigger that produced this event.
+         */
+        triggerUid: string;
+
+        /**
+         * Between 1 and 52.
+         * Because this property name contains dashes it must be accessed via
+         * e['week-of-year'] rather than dot notation.
+         */
+        'week-of-year': Integer;
+
+        /**
+         * The year.
+         */
+        year: Integer;
     }
 
     /**

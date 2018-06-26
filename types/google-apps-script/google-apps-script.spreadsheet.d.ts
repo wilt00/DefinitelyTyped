@@ -617,7 +617,7 @@ declare namespace GoogleAppsScript {
      * the number scale and the color applied to the cell is interpolated based
      * on the cell content's proximity to the gradient condition min, mid, and
      * max points.
-     * 
+     *
      * // Logs all the information inside gradient conditional format rules on * a sheet.
      * var sheet = SpreadsheetApp.getActiveSheet();
      * var rules = sheet.getConditionalFormatRules();
@@ -1439,6 +1439,139 @@ declare namespace GoogleAppsScript {
     }
 
     /**
+     * Event object received by onOpen() (simple and installable).
+     * The onOpen() trigger runs automatically when a user opens a spreadsheet they
+     * have permission to edit. onOpen() is most commonly used to add custom menu items.
+     */
+    export interface OpenEvent {
+        /**
+         * A value from the ScriptApp.AuthMode enum.
+         */
+        authMode: Script.AuthMode;
+
+        /**
+         * A Spreadsheet object, representing the Google Sheets file to which the
+         * script is bound.
+         */
+        source: Spreadsheet;
+
+        /**
+         * ID of trigger that produced this event (installable triggers only).
+         */
+        triggerUid?: string;
+
+        /**
+         * A User object, representing the owner of the spreadsheet (only available
+         * in simple triggers, and only if the current user is allowed to know the
+         * owner's email address, depending on a complex set of security restrictions).
+         */
+        user?: Base.User;
+    }
+
+    /**
+     * Event object received by Change triggers (installable only).
+     * An installable change trigger runs when a user modifies the structure of a
+     * spreadsheet itself—for example, by adding a new sheet or removing a column.
+     * Edits which trigger onEdit() also trigger this.
+     */
+    export interface ChangeEvent {
+        /**
+         * A value from the ScriptApp.AuthMode enum.
+         */
+        authMode: Script.AuthMode;
+
+        /**
+         * The type of change.
+         */
+        changeType: ChangeType;
+
+        /**
+         * ID of trigger that produced this event.
+         */
+        triggerUid: string;
+
+        /**
+         * A User object, representing the owner of the spreadsheet (only available in simple triggers, and only if the current user is allowed to know the owner's email address, depending on a complex set of security restrictions).
+         */
+        user?: Base.User;
+    }
+
+    /**
+     * Event object received by onEvent() (simple and installable). The onEdit()
+     * trigger runs automatically when a user changes the value of any cell in a
+     * spreadsheet.
+     */
+    export interface EditEvent {
+        /**
+         * A value from the ScriptApp.AuthMode enum.
+         */
+        authMode: Script.AuthMode;
+
+        /**
+         * Cell value prior to the edit, if any. Only available if the edited range is a single cell. Will be undefined if the cell had no previous content.
+         */
+        oldValue?: object;
+
+        /**
+         * A Range object, representing the cell or range of cells that were edited.
+         */
+        range: Range;
+
+        /**
+         * A Spreadsheet object, representing the Google Sheets file to which the script is bound.
+         */
+        source: Spreadsheet;
+
+        /**
+         * ID of trigger that produced this event (installable triggers only).
+         */
+        triggerUid?: string;
+
+        /**
+         * A User object, representing the owner of the spreadsheet (only available in simple triggers, and only if the current user is allowed to know the owner's email address, depending on a complex set of security restrictions).
+         */
+        user?: Base.User;
+
+        /**
+         * New cell value after the edit. Only available if the edited range is a single cell.
+         */
+        value: object;
+    }
+
+    /**
+     * An installable form submit trigger runs when a user responds to a form.
+     * There are two versions of the form-submit trigger, one for Google Forms itself
+     * and one for Sheets if the form submits to a spreadsheet; this is the
+     * event for the spreadsheet trigger.
+     */
+    export interface FormSubmitEvent {
+        /**
+         * A value from the ScriptApp.AuthMode enum.
+         */
+        authMode: Script.AuthMode;
+
+        /**
+         * An object containing the question names and values from the form submission.
+         */
+        namedValues: { [propName: string]: string[]; };
+
+        /**
+         * A Range object, representing the cell or range of cells that were edited.
+         */
+        range: Range;
+
+        /**
+         * ID of trigger that produced this event.
+         */
+        triggerUid: string;
+
+        /**
+         * Array with values in the same order as they appear in the spreadsheet.
+         */
+        values: string[];
+    }
+
+    /**
      * An enumeration representing the boolean criteria that can be used in conditional format or filter.
      */
     export enum BooleanCriteria {
@@ -1551,6 +1684,21 @@ declare namespace GoogleAppsScript {
        * The criteria is met when the input makes the given formula evaluate to true.
        */
       CUSTOM_FORMULA
+    }
+
+    /**
+     * An enumeration representing the type of change which caused this Change event to be emitted
+     */
+    export enum ChangeType {
+        EDIT,
+        INSERT_ROW,
+        INSERT_COLUMN,
+        REMOVE_ROW,
+        REMOVE_COLUMN,
+        INSERT_GRID,
+        REMOVE_GRID,
+        FORMAT,
+        OTHER
     }
 
     /**

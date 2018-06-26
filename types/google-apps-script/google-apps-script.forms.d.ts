@@ -455,6 +455,34 @@ declare namespace GoogleAppsScript {
     }
 
     /**
+     * An installable form submit trigger runs when a user responds to a form.
+     * There are two versions of the form-submit trigger, one for Google Forms itself
+     * and one for Sheets if the form submits to a spreadsheet; this is the
+     * event for the Forms trigger.
+     */
+    export interface FormSubmitEvent {
+        /**
+         * A value from the ScriptApp.AuthMode enum.
+         */
+        authMode: Script.AuthMode;
+
+        /**
+         * A FormResponse object, representing the user's response to the form as a whole.
+         */
+        response: FormResponse;
+
+        /**
+         * A Form object, representing the Google Forms file to which the script is bound.
+         */
+        source: Form;
+
+        /**
+         * ID of trigger that produced this event.
+         */
+        triggerUid: string;
+    }
+
+    /**
      * A question item, presented as a grid of columns and rows, that allows the respondent to select
      *  one choice per row from a sequence of radio buttons. Items can be accessed or created from a
      *   Form.
@@ -728,6 +756,36 @@ declare namespace GoogleAppsScript {
       setRequired(enabled: boolean): MultipleChoiceItem;
       setTitle(title: string): MultipleChoiceItem;
       showOtherOption(enabled: boolean): MultipleChoiceItem;
+    }
+
+    /**
+     * Event object received by onOpen() (simple and installable).
+     * The onOpen() trigger runs automatically when a user opens a document they
+     * have permission to edit. The trigger does not run when responding to a form,
+     * only when opening the form to edit it.
+     */
+    export interface OpenEvent {
+        /**
+         * A value from the ScriptApp.AuthMode enum.
+         */
+        authMode: Script.AuthMode;
+
+        /**
+         * A Form object, representing the Google Forms file to which the script is bound.
+         */
+        source: Form;
+
+        /**
+         * ID of trigger that produced this event (installable triggers only).
+         */
+        triggerUid?: string;
+
+        /**
+         * A User object, representing the owner of the spreadsheet (only available
+         * in simple triggers, and only if the current user is allowed to know the
+         * owner's email address, depending on a complex set of security restrictions).
+         */
+        user?: Base.User;
     }
 
     /**
