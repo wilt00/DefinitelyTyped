@@ -756,7 +756,8 @@ namespace util_tests {
             customInspect: false,
             showProxy: true,
             maxArrayLength: 10,
-            breakLength: 20
+            breakLength: 20,
+            compact: true
         });
         util.inspect(["This is nice"], {
             colors: true,
@@ -764,7 +765,8 @@ namespace util_tests {
             customInspect: false,
             showProxy: true,
             maxArrayLength: null,
-            breakLength: Infinity
+            breakLength: Infinity,
+            compact: false
         });
         assert(typeof util.inspect.custom === 'symbol');
 
@@ -1259,6 +1261,24 @@ namespace crypto_tests {
         crypto.randomFill(i32arr, (err: Error, buf: ArrayBufferView) => void {});
         crypto.randomFill(i32arr, 2, (err: Error, buf: ArrayBufferView) => void {});
         crypto.randomFill(i32arr, 2, 3, (err: Error, buf: ArrayBufferView) => void {});
+    }
+
+    {
+        // scrypt
+        const pwd: string | Buffer | Int32Array | DataView = Buffer.alloc(16);
+        const salt: string | Buffer | Int32Array | DataView = Buffer.alloc(16);
+        crypto.scrypt(pwd, salt, 64, (err: Error | null, derivedKey: Buffer): void => {});
+        const opts: crypto.ScryptOptions = {
+            N: 16384,
+            r: 8,
+            p: 1,
+            maxmem: 32 * 1024 * 1024
+        };
+        crypto.scrypt(pwd, salt, 64, opts, (err: Error | null, derivedKey: Buffer): void => {});
+        crypto.scrypt(pwd, salt, 64, { maxmem: 16 * 1024 * 1024 }, (err: Error | null, derivedKey: Buffer): void => {});
+        let buf: Buffer = crypto.scryptSync(pwd, salt, 64);
+        buf = crypto.scryptSync(pwd, salt, 64, opts);
+        buf = crypto.scryptSync(pwd, salt, 64, { N: 1024 });
     }
 
     {

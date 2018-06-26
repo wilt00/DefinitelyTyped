@@ -251,7 +251,7 @@ declare namespace Office {
      * *Note*: The reason parameter of the initialize event listener function only returns an `InitializationReason` enumeration value for task pane and content add-ins. It does not return a value for Outlook add-ins.
      * 
      * @remarks
-     * Hosts: Access, Excel, Outlook, PowerPoint, Project, Word
+     * <table><tr><td>Hosts</td><td>Access, Excel, Outlook, PowerPoint, Project, Word</td></tr></table>
      * 
      * @param reason Indicates how the app was initialized.
      */
@@ -267,7 +267,7 @@ declare namespace Office {
      * Toggles on and off the `Office` alias for the full `Microsoft.Office.WebExtension` namespace.
      * 
      * @remarks
-     * Hosts: Access, Excel, Outlook, PowerPoint, Project, Word
+     * <table><tr><td>Hosts</td><td>Access, Excel, Outlook, PowerPoint, Project, Word</td></tr></table>
      * 
      * @param useShortNamespace True to use the shortcut alias; otherwise false to disable it. The default is true.
      */
@@ -275,10 +275,11 @@ declare namespace Office {
     // Enumerations
     /**
      * Specifies the result of an asynchronous call.
+     * 
      * @remarks
+     * <table><tr><td>Hosts</td><td>Access, Excel, Outlook, PowerPoint, Project, Word</td></tr></table>
+     * 
      * Returned by the status property of the AsyncResult object.
-     *
-     * Hosts: Access, Excel, Outlook, PowerPoint, Project, Word
      */
     enum AsyncResultStatus {
         /**
@@ -294,7 +295,7 @@ declare namespace Office {
      * Specifies whether the add-in was just inserted or was already contained in the document.
      *
      * @remarks
-     * Hosts: Excel, Project, Word
+     * <table><tr><td>Hosts</td><td>Excel, Project, Word</td></tr></table>
      */
     enum InitializationReason {
         /**
@@ -310,7 +311,7 @@ declare namespace Office {
      * Specifies the host Office application in which the add-in is running.
      *
      * @remarks
-     * Hosts: Excel, Word, PowerPoint, Outlook, OneNote, Project, Access
+     * <table><tr><td>Hosts</td><td>Excel, Word, PowerPoint, Outlook, OneNote, Project, Access</td></tr></table>
      */
     enum HostType {
         /**
@@ -346,7 +347,7 @@ declare namespace Office {
      * Specifies the OS or other platform on which the Office host application is running.
      *
      * @remarks
-     * Hosts: Excel, Word, PowerPoint, Outlook, OneNote, Project, Access
+     * <table><tr><td>Hosts</td><td>Excel, Word, PowerPoint, Outlook, OneNote, Project, Access</td></tr></table>
      */
     enum PlatformType {
         /**
@@ -379,7 +380,7 @@ declare namespace Office {
         * An object which encapsulates the result of an asynchronous request, including status and error information if the request failed.
         *
         * @remarks
-        * Hosts: Access, Excel, Outlook, PowerPoint, Project, Word
+        * <table><tr><td>Hosts</td><td>Access, Excel, Outlook, PowerPoint, Project, Word</td></tr></table>
         *
         * When the function you pass to the `callback` parameter of an "Async" method executes, it receives an AsyncResult object that you can access from the `callback` function's only parameter.
         */
@@ -388,32 +389,32 @@ declare namespace Office {
         * Gets the user-defined item passed to the optional `asyncContext` parameter of the invoked method in the same state as it was passed in. This the user-defined item (which can be of any JavaScript type: String, Number, Boolean, Object, Array, Null, or Undefined) passed to the optional `asyncContext` parameter of the invoked method. Returns Undefined, if you didn't pass anything to the asyncContext parameter.
         *
         * @remarks
-        * Hosts: Access, Excel, Outlook, PowerPoint, Project, Word
+        * <table><tr><td>Hosts</td><td>Access, Excel, Outlook, PowerPoint, Project, Word</td></tr></table>
         */
         asyncContext: any;
         /**
         * Gets the {@link Office.AsyncResultStatus} of the asynchronous operation.
         *
         * @remarks
-        * Hosts: Access, Excel, Outlook, PowerPoint, Project, Word
+        * <table><tr><td>Hosts</td><td>Access, Excel, Outlook, PowerPoint, Project, Word</td></tr></table>
         */
         status: AsyncResultStatus;
         /**
         * Gets an {@link Office.Error} object that provides a description of the error, if any error occurred.
         *
         * @remarks
-        * Hosts: Access, Excel, Outlook, PowerPoint, Project, Word
+        * <table><tr><td>Hosts</td><td>Access, Excel, Outlook, PowerPoint, Project, Word</td></tr></table>
         */
         error: Error;
         /**
         * Gets the payload or content of this asynchronous operation, if any.
-
+        * 
         * @remarks
+        * <table><tr><td>Hosts</td><td>Access, Excel, Outlook, PowerPoint, Project, Word</td></tr></table>
+        * 
         * You access the AsyncResult object in the function passed as the argument to the callback parameter of an "Async" method, such as the `getSelectedDataAsync` and `setSelectedDataAsync` methods of the Document object.
         *
         * Note: What the value property returns for a particular "Async" method varies depending on the purpose and context of that method. To determine what is returned by the value property for an "Async" method, refer to the "Callback value" section of the method's topic. For a complete listing of the "Async" methods, see the Remarks section of the AsyncResult object topic.
-        *
-        * Hosts: Access, Excel, Outlook, PowerPoint, Project, Word
         */
         value: any;
     }
@@ -421,7 +422,7 @@ declare namespace Office {
      * Represents the runtime environment of the add-in and provides access to key objects of the API. 
      *
      * @remarks 
-     * Hosts: Access, Excel, Outlook, PowerPoint, Project, Word 
+     * <table><tr><td>Hosts</td><td>Access, Excel, Outlook, PowerPoint, Project, Word </td></tr></table>
      */     
     interface Context {
         /**
@@ -475,9 +476,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.0]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: Restricted
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>Restricted</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         mailbox: Mailbox;
         /**
@@ -500,9 +501,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.0]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: Restricted
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>Restricted</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         roamingSettings: RoamingSettings;
         /**
@@ -521,9 +522,9 @@ declare namespace Office {
      * Provides specific information about an error that occurred during an asynchronous data operation.
      *
      * @remarks
+     * <table><tr><td>Hosts</td><td>Access, Excel, Outlook, PowerPoint, Project, Word</td></tr></table>
+     * 
      * The Error object is accessed from the AsyncResult object that is returned in the function passed as the callback argument of an asynchronous data operation, such as the setSelectedDataAsync method of the Document object.
-     *
-     * Hosts: Access, Excel, Outlook, PowerPoint, Project, Word
      */
     interface Error {
         /**
@@ -547,13 +548,13 @@ declare namespace Office {
          * 
          * @remarks
          * 
-         * Hosts: Excel, Outlook, PowerPoint, Word
+         * <table><tr><td>Hosts</td><td>Excel, Outlook, PowerPoint, Word</td></tr>
          * 
-         * Add-in type: Content, task pane, Outlook
+         * <tr><td>Add-in type</td><td>Content, task pane, Outlook</td></tr>
          * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: Restricted
+         * <tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>Restricted</td></tr>
          *
-         * Applicable Outlook mode: Compose or Read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or Read</td></tr></table>
          */
         interface Event {
             
@@ -573,9 +574,9 @@ declare namespace Office {
              *
              * @remarks
              * 
-             * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: Restricted
+             * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>Restricted</td></tr>
              *
-             * Applicable Outlook mode: Compose or read
+             * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
              * 
              * @param options Optional. An object literal that contains one or more of the following properties.
              *        allowEvent: A boolean value. When the completed method is used to signal completion of an event handler, this value indicates of the handled event should continue execution or be canceled. For example, an add-in that handles the ItemSend event can set allowEvent = false to cancel sending of the message.
@@ -604,9 +605,9 @@ declare namespace Office {
         * Displays a dialog to show or collect information from the user or to facilitate Web navigation.
         *
         * @remarks
-        * Hosts: Word, Excel, Outlook, PowerPoint
+        * <table><tr><td>Hosts</td><td>Word, Excel, Outlook, PowerPoint</td></tr>
         *
-        * Requirement sets: DialogApi, Mailbox 1.4
+        * <tr><td>Requirement sets</td><td>DialogApi, Mailbox 1.4</td></tr></table>
         *
         * The initial page must be on the same domain as the parent page (the startAddress parameter). After the initial page loads, you can go to other domains.
         *
@@ -696,6 +697,8 @@ declare namespace Office {
          * Closes the UI container where the JavaScript is executing.
          *
          * @remarks
+         * <table><tr><td>Hosts</td><td>Excel, Word, PowerPoint, Outlook (Minimum requirement set: Mailbox 1.5)</td></tr></table>
+         * 
          * The behavior of this method is specified by the following:
          *
          * - Called from a UI-less command button: No effect. Any dialog opened by displayDialogAsync will remain open.
@@ -703,8 +706,6 @@ declare namespace Office {
          * - Called from a taskpane: The taskpane will close. Any dialog opened by displayDialogAsync will also close. If the taskpane supports pinning and was pinned by the user, it will be un-pinned.
          *
          * - Called from a module extension: No effect.
-         *
-         * Hosts: Excel, Word, PowerPoint, Outlook (Minimum requirement set: Mailbox 1.5)
          */
         closeContainer(): void;
     }
@@ -750,9 +751,9 @@ declare namespace Office {
         * Calls the Azure Active Directory V 2.0 endpoint to get an access token to your add-in's web application. Allows add-ins to identify users. Server side code can use this token to access Microsoft Graph for the add-in's web application by using the {@link https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of | "on behalf of" OAuth flow}.
         *
         * @remarks
-        * Hosts: Excel, OneNote, Outlook, PowerPoint, Word
+        * <table><tr><td>Hosts</td><td>Excel, OneNote, Outlook, PowerPoint, Word</td></tr>
         *
-        * Requirement sets: IdentityAPI
+        * <tr><td>Requirement sets</td><td>IdentityAPI</td></tr></table>
         *
         * This API requires a single sign-on configuration that bridges the add-in to an Azure application. Office users sign-in with Organizational Accounts and Microsoft Accounts. Microsoft Azure returns tokens intended for both user account types to access resources in the Microsoft Graph.
         *
@@ -1021,11 +1022,11 @@ declare namespace Office {
      * @remarks
      * The behavior caused by the {@link Office.SelectionMode | options.selectionMode} option varies by host:
      *
-     * In Excel: Office.SelectionMode.Selected selects all content in the binding, or named item. Office.SelectionMode.None for text bindings, selects the cell; for matrix bindings, table bindings, and named items, selects the first data cell (not first cell in header row for tables).
+     * In Excel: `Office.SelectionMode.Selected` selects all content in the binding, or named item. `Office.SelectionMode.None` for text bindings, selects the cell; for matrix bindings, table bindings, and named items, selects the first data cell (not first cell in header row for tables).
      *
-     * In PowerPoint: Office.SelectionMode.Selected selects the slide title or first textbox on the slide. Office.SelectionMode.None Doesn't select anything.
+     * In PowerPoint: `Office.SelectionMode.Selected` selects the slide title or first textbox on the slide. `Office.SelectionMode.None` Doesn't select anything.
      *
-     * In Word: Office.SelectionMode.Selected selects all content in the binding. Office.SelectionMode.None for text bindings, moves the cursor to the beginning of the text; for matrix bindings and table bindings, selects the first data cell (not first cell in header row for tables).
+     * In Word: `Office.SelectionMode.Selected` selects all content in the binding. `Office.SelectionMode.None` for text bindings, moves the cursor to the beginning of the text; for matrix bindings and table bindings, selects the first data cell (not first cell in header row for tables).
      */
     interface GoToByIdOptions {
         /**
@@ -1095,7 +1096,7 @@ declare namespace Office {
      * Using Office theme colors lets you coordinate the color scheme of your add-in with the current Office theme selected by the user with File > Office Account > Office Theme UI, which is applied across all Office host applications. Using Office theme colors is appropriate for mail and task pane add-ins.
      *
      * @remarks
-     * Hosts: Excel, Outlook, Powerpoint, Project, Word
+     * <table><tr><td>Hosts</td><td>Excel, Outlook, Powerpoint, Project, Word</td></tr></table>
      */
     interface OfficeTheme {
         /**
@@ -1145,7 +1146,7 @@ declare namespace Office {
     /**
      * Specifies the state of the active view of the document, for example, whether the user can edit the document.
      * @remarks
-     * Hosts: PowerPoint
+     * <table><tr><td>Hosts</td><td>PowerPoint</td></tr></table>
      */
     enum ActiveView {
         /**
@@ -1160,7 +1161,7 @@ declare namespace Office {
     /**
      * Specifies the type of the binding object that should be returned.
      * @remarks
-     * Hosts: Access, Excel, Word
+     * <table><tr><td>Hosts</td><td>Access, Excel, Word</td></tr></table>
      */
     enum BindingType {
         /**
@@ -1180,9 +1181,9 @@ declare namespace Office {
      * Specifies how to coerce data returned or set by the invoked method.
      *
      * @remarks
+     * <table><tr><td>Hosts</td><td>Access, Excel, Outlook, PowerPoint, Project, Word</td></tr></table>
+     * 
      * PowerPoint supports only `Office.CoercionType.Text`, `Office.CoercionType.Image`, and `Office.CoercionType.SlideRange`. Project supports only `Office.CoercionType.Text`.
-     *
-     * Hosts: Access, Excel, Outlook, PowerPoint, Project, Word
      */
     enum CoercionType {
         /**
@@ -1228,10 +1229,11 @@ declare namespace Office {
     }
     /**
      * Specifies whether the document in the associated application is read-only or read-write.
+     * 
      * @remarks
+     * <table><tr><td>Hosts</td><td>Excel, PowerPoint, Project, Word</td></tr></table>
+     * 
      * Returned by the mode property of the Document object.
-     *
-     * Hosts: Excel, PowerPoint, Project, Word
      */
     enum DocumentMode {
         /**
@@ -1247,9 +1249,9 @@ declare namespace Office {
      * Specifies the type of the XML node.
      *
      * @remarks
-     * Hosts: Word
+     * <table><tr><td>Hosts</td><td>Word</td></tr>
      * 
-     * Available in Requirement set: CustomXmlParts
+     * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
      */
     enum CustomXMLNodeType {
         /**
@@ -1285,9 +1287,11 @@ declare namespace Office {
      * Specifies the kind of event that was raised. Returned by the `type` property of an *EventArgs object.
      *
      * @remarks
+     * <table><tr><td>Hosts</td><td>Access, Excel, PowerPoint, Project, Word</td></tr>
+     * <tr><td>Hosts (BindingDataChanged and BindingSelectionChanged)</td><td>Access, Excel, Word</td></tr></table>
+     * 
+     * 
      * Add-ins for Project support the `Office.EventType.ResourceSelectionChanged`, `Office.EventType.TaskSelectionChanged`, and `Office.EventType.ViewSelectionChanged` event types.
-     *
-     * Hosts: Access, Excel, PowerPoint, Project, Word
      */
     enum EventType {
         /**
@@ -1295,23 +1299,15 @@ declare namespace Office {
          */
         ActiveViewChanged,
         /**
-         * Occurs when data within the binding is changed.
-         *
-         * @remarks
-         * Hosts: Access, Excel, Word
-         *
-         * To add an event handler for the BindingDataChanged event of a binding, use the addHandlerAsync method of the Binding object. The event handler receives an argument of type BindingDataChangedEventArgs.
+         * Occurs when data within the binding is changed. 
+         * To add an event handler for the BindingDataChanged event of a binding, use the addHandlerAsync method of the Binding object. 
+         * The event handler receives an argument of type {@link Office.BindingDataChangedEventArgs}.
          */
         BindingDataChanged,
         /**
          * Occurs when the selection is changed within the binding.
-         *
-         * @remarks
-         * Hosts: Access, Excel, Word
-         *
-         * Available in Requirement set: BindingEvents
-         *
-         * To add an event handler for the BindingSelectionChanged event of a binding, use the addHandlerAsync method of the Binding object. The event handler receives an argument of type BindingSelectionChangedEventArgs.
+         * To add an event handler for the BindingSelectionChanged event of a binding, use the addHandlerAsync method of the Binding object. 
+         * The event handler receives an argument of type {@link Office.BindingSelectionChangedEventArgs}.
          */
         BindingSelectionChanged,
         /**
@@ -1367,7 +1363,7 @@ declare namespace Office {
      * Specifies the format in which to return the document.
      *
      * @remarks
-     * Hosts: PowerPoint, Word
+     * <table><tr><td>Hosts</td><td>PowerPoint, Word</td></tr></table>
      */
     enum FileType {
         /**
@@ -1387,7 +1383,7 @@ declare namespace Office {
      * Specifies whether filtering from the host application is applied when the data is retrieved.
      *
      * @remarks
-     * Hosts: Excel, Project, Word
+     * <table><tr><td>Hosts</td><td>Excel, Project, Word</td></tr></table>
      */
     enum FilterType {
         /**
@@ -1403,7 +1399,7 @@ declare namespace Office {
      * Specifies the type of place or object to navigate to.
      *
      * @remarks
-     * Hosts: Excel, PowerPoint, Word
+     * <table><tr><td>Hosts</td><td>Excel, PowerPoint, Word</td></tr></table>
      */
     enum GoToType {
         /**
@@ -1428,7 +1424,7 @@ declare namespace Office {
      * Specifies whether to select (highlight) the location to navigate to (when using the Document.goToByIdAsync method).
      *
      * @remarks
-     * Hosts: Excel, PowerPoint, Word
+     * <table><tr><td>Hosts</td><td>Excel, PowerPoint, Word</td></tr></table>
      */
     enum SelectionMode {
         Default,
@@ -1445,9 +1441,10 @@ declare namespace Office {
      * Specifies whether values, such as numbers and dates, returned by the invoked method are returned with their formatting applied.
      *
      * @remarks
-     * For example, if the valueFormat parameter is specified as "formatted", a number formatted as currency, or a date formatted as mm/dd/yy in the host application will have its formatting preserved. If the valueFormat parameter is specified as "unformatted", a date will be returned in its underlying sequential serial number form.
-     *
-     * Hosts: Excel, Project, Word
+     * <table><tr><td>Hosts</td><td>Excel, Project, Word</td></tr></table>
+     * 
+     * For example, if the valueFormat parameter is specified as "formatted", a number formatted as currency, or a date formatted as mm/dd/yy in the host application will have its formatting preserved. 
+     * If the valueFormat parameter is specified as "unformatted", a date will be returned in its underlying sequential serial number form.
      */
     enum ValueFormat {
         /**
@@ -1464,9 +1461,9 @@ declare namespace Office {
     * Represents a binding to a section of the document.
     *
     * @remarks
-    * Hosts: Access, Excel, Word
+    * <table><tr><td>Hosts</td><td>Access, Excel, Word</td></tr>
     *
-    * Available in Requirement sets: MatrixBinding, TableBinding, TextBinding
+    * <tr><td>Requirement Sets</td><td>MatrixBinding, TableBinding, TextBinding</td></tr></table>
     *
     * The Binding object exposes the functionality possessed by all bindings regardless of type.
     *
@@ -1479,21 +1476,21 @@ declare namespace Office {
         * Get the Document object associated with the binding.
         *
         * @remarks
-        * Hosts: Access, Excel, Word
+        * <table><tr><td>Hosts</td><td>Access, Excel, Word</td></tr></table>
         */
         document: Document;
         /**
          * A string that uniquely identifies this binding among the bindings in the same Document object.
          *
          * @remarks
-         * Hosts: Access, Excel, Word
+         * <table><tr><td>Hosts</td><td>Access, Excel, Word</td></tr></table>
          */
         id: string;
         /**
         * Gets the type of the binding.
         *
         * @remarks
-        * Hosts: Access, Excel, Word
+        * <table><tr><td>Hosts</td><td>Access, Excel, Word</td></tr></table>
         */
         type: BindingType;
         /**
@@ -1512,9 +1509,9 @@ declare namespace Office {
          * Returns the data contained within the binding.
          *
          * @remarks
-         * Hosts: Access, Excel, Word
+         * <table><tr><td>Hosts</td><td>Access, Excel, Word</td></tr>
          *
-         * Available in Requirement sets: MatrixBindings, TableBindings, TextBindings
+         * <tr><td>Requirement Sets</td><td>MatrixBindings, TableBindings, TextBindings</td></tr></table>
          *
          * When called from a MatrixBinding or TableBinding, the getDataAsync method will return a subset of the bound values if the optional startRow, startColumn, rowCount, and columnCount parameters are specified (and they specify a contiguous and valid range).
          *
@@ -1526,9 +1523,9 @@ declare namespace Office {
          * Removes the specified handler from the binding for the specified event type.
          *
          * @remarks
-         * Hosts: Access, Excel, Word
+         * <table><tr><td>Hosts</td><td>Access, Excel, Word</td></tr>
          *
-         * Available in Requirement set: BindingEvents
+         * <tr><td>Requirement Sets</td><td>BindingEvents</td></tr></table>
          *
          * @param eventType The event type. For bindings, it can be `Office.EventType.BindingDataChanged` or `Office.EventType.BindingSelectionChanged`.
          * @param options Provides options to determine which event handler or handlers are removed.
@@ -1540,9 +1537,9 @@ declare namespace Office {
          *
          * @remarks
          * 
-         * Hosts: Access, Excel, Word
+         * <table><tr><td>Hosts</td><td>Access, Excel, Word</td></tr>
          *
-         * Available in Requirement sets: MatrixBindings, TableBindings, TextBindings
+         * <tr><td>Requirement Sets</td><td>MatrixBindings, TableBindings, TextBindings</td></tr></table>
          * 
          * The value passed for data contains the data to be written in the binding. The kind of value passed determines what will be written as described in the following table.
          * 
@@ -1669,7 +1666,7 @@ declare namespace Office {
      * Provides information about the binding that raised the DataChanged event.
      * 
      * @remarks
-     * Hosts: Access, Excel, Word
+     * <table><tr><td>Hosts</td><td>Access, Excel, Word</td></tr></table>
      */
     interface BindingDataChangedEventArgs {
         /**
@@ -1687,7 +1684,7 @@ declare namespace Office {
      * Provides information about the binding that raised the SelectionChanged event.
      * 
      * @remarks
-     * Hosts: Access, Excel, Word
+     * <table><tr><td>Hosts</td><td>Access, Excel, Word</td></tr></table>
      */
     interface BindingSelectionChangedEventArgs {
         /**
@@ -1743,16 +1740,16 @@ declare namespace Office {
         * Gets an {@link Office.Document} object that represents the document associated with this set of bindings.
         *
         * @remarks
-        * Hosts: Access, Excel, Word
+        * <table><tr><td>Hosts</td><td>Access, Excel, Word</td></tr></table>
         */
         document: Document;
         /**
          * Creates a binding against a named object in the document.
          *
          * @remarks
-         * Hosts: Access, Excel, Word
+         * <table><tr><td>Hosts</td><td>Access, Excel, Word</td></tr>
          *
-         * Available in Requirement set: MatrixBindings, TableBindings, TextBindings
+         * <tr><td>Requirement Sets</td><td>MatrixBindings, TableBindings, TextBindings</td></tr></table>
          *
          * For Excel, the itemName parameter can refer to a named range or a table.
          *
@@ -1776,9 +1773,9 @@ declare namespace Office {
          * Create a binding by prompting the user to make a selection on the document.
          *
          * @remarks
-         * Hosts: Access, Excel
+         * <table><tr><td>Hosts</td><td>Access, Excel</td></tr>
          *
-         * Available in Requirement set: Not in a set
+         * <tr><td>Requirement Sets</td><td>Not in a set</td></tr></table>
          *
          * Adds a binding object of the specified type to the Bindings collection, which will be identified with the supplied id. The method fails if the specified selection cannot be bound.
          *
@@ -1791,9 +1788,9 @@ declare namespace Office {
          * Create a binding based on the user's current selection.
          *
          * @remarks
-         * Hosts: Access, Excel, Word
+         * <table><tr><td>Hosts</td><td>Access, Excel, Word</td></tr>
          *
-         * Available in Requirement set: MatrixBindings, TableBindings, TextBindings
+         * <tr><td>Requirement Sets</td><td>MatrixBindings, TableBindings, TextBindings</td></tr></table>
          *
          * Adds the specified type of binding object to the Bindings collection, which will be identified with the supplied id.
          *
@@ -1808,9 +1805,9 @@ declare namespace Office {
          * Gets all bindings that were previously created.
          *
          * @remarks
-         * Hosts: Access, Excel, Word
+         * <table><tr><td>Hosts</td><td>Access, Excel, Word</td></tr>
          *
-         * Available in Requirement set: MatrixBindings, TableBindings, TextBindings
+         * <tr><td>Requirement Sets</td><td>MatrixBindings, TableBindings, TextBindings</td></tr></table>
          *
          * @param options Provides an option for preserving context data of any type, unchanged, for use in a callback.
          * @param callback A function that is invoked when the callback returns, whose only parameter is of type AsyncResult.
@@ -1820,9 +1817,9 @@ declare namespace Office {
          * Retrieves a binding based on its Name
          *
          * @remarks
-         * Hosts: Access, Excel, Word
+         * <table><tr><td>Hosts</td><td>Access, Excel, Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts, MatrixBindings, TableBindings, TextBindings
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts, MatrixBindings, TableBindings, TextBindings</td></tr></table>
          *
          * Fails if the specified id does not exist.
          *
@@ -1835,9 +1832,9 @@ declare namespace Office {
          * Removes the binding from the document
          *
          * @remarks
-         * Hosts: Access, Excel, Word
+         * <table><tr><td>Hosts</td><td>Access, Excel, Word</td></tr>
          *
-         * Available in Requirement set: MatrixBindings, TableBindings, TextBindings
+         * <tr><td>Requirement Sets</td><td>MatrixBindings, TableBindings, TextBindings</td></tr></table>
          *
          * Fails if the specified id does not exist.
          *
@@ -1851,45 +1848,45 @@ declare namespace Office {
      * Represents an XML node in a tree in a document.
      *
      * @remarks
-     * Hosts: Word
+     * <table><tr><td>Hosts</td><td>Word</td></tr>
      *
-     * Available in Requirement set: CustomXmlParts
+     * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
      */
     interface CustomXmlNode {
         /**
          * Gets the base name of the node without the namespace prefix, if one exists.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          */
         baseName: string;
         /**
          * Retrieves the string GUID of the CustomXMLPart.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          */
         namespaceUri: string;
         /**
          * Gets the type of the CustomXMLNode.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          */
         nodeType: string;
         /**
          * Gets the nodes associated with the XPath expression.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          *
          * @param xPath The XPath expression that specifies the nodes to get. Required.
          * @param options Provides an option for preserving context data of any type, unchanged, for use in a callback.
@@ -1900,9 +1897,9 @@ declare namespace Office {
          * Gets the node value.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          *
          * @param options Provides an option for preserving context data of any type, unchanged, for use in a callback.
          * @param callback Optional. A function that is invoked when the callback returns, whose only parameter is of type AsyncResult.
@@ -1912,9 +1909,9 @@ declare namespace Office {
          * Gets the text of an XML node in a custom XML part.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          *
          * @param options Provides an option for preserving context data of any type, unchanged, for use in a callback.
          * @param callback Optional. A function that is invoked when the callback returns, whose only parameter is of type AsyncResult.
@@ -1924,9 +1921,9 @@ declare namespace Office {
          * Gets the node's XML.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          *
          * @param options Provides an option for preserving context data of any type, unchanged, for use in a callback.
          * @param callback Optional. A function that is invoked when the callback returns, whose only parameter is of type AsyncResult.
@@ -1936,9 +1933,9 @@ declare namespace Office {
          * Sets the node value.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          *
          * @param value The value to be set on the node
          * @param options Provides an option for preserving context data of any type, unchanged, for use in a callback.
@@ -1949,9 +1946,9 @@ declare namespace Office {
          * Asynchronously sets the text of an XML node in a custom XML part.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          *
          * @param text Required. The text value of the XML node.
          * @param options Provides an option for preserving context data of any type, unchanged, for use in a callback.
@@ -1962,9 +1959,9 @@ declare namespace Office {
          * Sets the node XML.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          *
          * @param xml The XML to be set on the node
          * @param options Provides an option for preserving context data of any type, unchanged, for use in a callback.
@@ -1976,36 +1973,36 @@ declare namespace Office {
      * Represents a single CustomXMLPart in an {@link Office.CustomXmlParts} collection.
      *
      * @remarks
-     * Hosts: Word
+     * <table><tr><td>Hosts</td><td>Word</td></tr>
      *
-     * Available in Requirement set: CustomXmlParts
+     * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
      */
     interface CustomXmlPart {
         /**
          * True, if the custom XML part is built in; otherwise false.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          */
         builtIn: boolean;
         /**
          * Gets the GUID of the CustomXMLPart.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          */
         id: string;
         /**
          * Gets the set of namespace prefix mappings ({@link Office.CustomXmlPrefixMappings}) used against the current CustomXMLPart.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          */
         namespaceManager: CustomXmlPrefixMappings;
 
@@ -2013,7 +2010,7 @@ declare namespace Office {
          * Adds an event handler to the object using the specified event type.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr></table>
          *
          * You can add multiple event handlers for the specified eventType as long as the name of each event handler function is unique.
          *
@@ -2027,9 +2024,9 @@ declare namespace Office {
          * Deletes the Custom XML Part.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          *
          * @param options Provides an option for preserving context data of any type, unchanged, for use in a callback.
          * @param callback Optional. A function that is invoked when the callback returns, whose only parameter is of type AsyncResult.
@@ -2039,9 +2036,9 @@ declare namespace Office {
          * Asynchronously gets any CustomXmlNodes in this custom XML part which match the specified XPath.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          *
          * @param xPath An XPath expression that specifies the nodes you want returned. Required.
          * @param options Provides an option for preserving context data of any type, unchanged, for use in a callback.
@@ -2052,9 +2049,9 @@ declare namespace Office {
          * Asynchronously gets the XML inside this custom XML part.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          *
          * @param options Provides an option for preserving context data of any type, unchanged, for use in a callback.
          * @param callback Optional. A function that is invoked when the callback returns, whose only parameter is of type AsyncResult.
@@ -2064,9 +2061,9 @@ declare namespace Office {
          * Removes an event handler for the specified event type.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          *
          * @param eventType Specifies the type of event to remove. For a CustomXmlPart object, the eventType parameter can be specified as `Office.EventType.NodeDeleted`, `Office.EventType.NodeInserted`, and `Office.EventType.NodeReplaced`.
          * @param handler The name of the handler to remove.
@@ -2077,10 +2074,10 @@ declare namespace Office {
     }
 
     /**
-     * Provides information about the deleted node that raised the dataNodeDeleted event.
+     * Provides information about the deleted node that raised the nodeDeleted event.
      * 
      * @remarks
-     * Hosts: Word
+     * <table><tr><td>Hosts</td><td>Word</td></tr></table>
      */
     interface NodeDeletedEventArgs {
         /**
@@ -2100,10 +2097,10 @@ declare namespace Office {
     }
 
     /**
-     * Provides information about the inserted node that raised the dataNodeInserted event.
+     * Provides information about the inserted node that raised the nodeInserted event.
      * 
      * @remarks
-     * Hosts: Word
+     * <table><tr><td>Hosts</td><td>Word</td></tr></table>
      */
     interface NodeInsertedEventArgs  {
         /**
@@ -2119,7 +2116,7 @@ declare namespace Office {
     }
     
     /**
-     * Provides information about the replaced node that raised the dataNodeReplaced event.
+     * Provides information about the replaced node that raised the nodeReplaced event.
      */
     interface NodeReplacedEventArgs  {
         /**
@@ -2144,18 +2141,18 @@ declare namespace Office {
      * Represents a collection of CustomXmlPart objects.
      *
      * @remarks
-     * Hosts: Word
+     * <table><tr><td>Hosts</td><td>Word</td></tr>
      *
-     * Available in Requirement set: CustomXmlParts
+     * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
      */
     interface CustomXmlParts {
         /**
          * Asynchronously adds a new custom XML part to a file.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          *
          * @param xml The XML to add to the newly created custom XML part.
          * @param options Provides an option for preserving context data of any type, unchanged, for use in a callback.
@@ -2166,9 +2163,9 @@ declare namespace Office {
          * Asynchronously gets the specified custom XML part by its id.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          *
          * @param id The GUID of the custom XML part, including opening and closing braces.
          * @param options Provides an option for preserving context data of any type, unchanged, for use in a callback.
@@ -2179,9 +2176,9 @@ declare namespace Office {
          * Asynchronously gets the specified custom XML part(s) by its namespace.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          *
          * @param ns  The namespace URI.
          * @param options Provides an option for preserving context data of any type, unchanged, for use in a callback.
@@ -2193,16 +2190,16 @@ declare namespace Office {
      * Represents a collection of CustomXmlPart objects.
      *
      * @remarks
-     * Hosts: Word
+     * <table><tr><td>Hosts</td><td>Word</td></tr></table>
      */
     interface CustomXmlPrefixMappings {
         /**
          * Asynchronously adds a prefix to namespace mapping to use when querying an item.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          *
          * If no namespace is assigned to the requested prefix, the method returns an empty string ("").
          *
@@ -2216,9 +2213,9 @@ declare namespace Office {
          * Asynchronously gets the namespace mapped to the specified prefix.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          *
          * If the prefix already exists in the namespace manager, this method will overwrite the mapping of that prefix except when the prefix is one added or used by the data store internally, in which case it will return an error.
          *
@@ -2231,9 +2228,9 @@ declare namespace Office {
          * Asynchronously gets the prefix for the specified namespace.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr>
          *
-         * Available in Requirement set: CustomXmlParts
+         * <tr><td>Requirement Sets</td><td>CustomXmlParts</td></tr></table>
          *
          * If no prefix is assigned to the requested namespace, the method returns an empty string (""). If there are multiple prefixes specified in the namespace manager, the method returns the first prefix that matches the supplied namespace.
          *
@@ -2247,14 +2244,14 @@ declare namespace Office {
      * An abstract class that represents the document the add-in is interacting with.
      *
      * @remarks
-     * Hosts: Access, Excel, PowerPoint, Project, Word
+     * <table><tr><td>Hosts</td><td>Access, Excel, PowerPoint, Project, Word</td></tr></table>
      */
     interface Document {
         /**
          * Gets an object that provides access to the bindings defined in the document.
          *
          * @remarks
-         * Hosts: Access, Excel, Word
+         * <table><tr><td>Hosts</td><td>Access, Excel, Word</td></tr></table>
          *
          * You don't instantiate the Document object directly in your script. To call members of the Document object to interact with the current document or worksheet, use `Office.context.document` in your script.
          */
@@ -2263,37 +2260,37 @@ declare namespace Office {
          * Gets an object that represents the custom XML parts in the document.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr></table>
          */
         customXmlParts: CustomXmlParts;
         /**
          * Gets the mode the document is in.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr></table>
          */
         mode: DocumentMode;
         /**
          * Gets an object that represents the saved custom settings of the content or task pane add-in for the current document.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr></table>
          */
         settings: Settings;
         /**
          * Gets the URL of the document that the host application currently has open. Returns null if the URL is unavailable.
          *
          * @remarks
-         * Hosts: Word
+         * <table><tr><td>Hosts</td><td>Word</td></tr></table>
          */
         url: string;
         /**
          * Adds an event handler for a Document object event.
          *
          * @remarks
-         * Hosts: Excel, PowerPoint, Project, Word
+         * <table><tr><td>Hosts</td><td>Excel, PowerPoint, Project, Word</td></tr>
          *
-         * Available in Requirement set: DocumentEvents
+         * <tr><td>Requirement Sets</td><td>DocumentEvents</td></tr></table>
          *
          * You can add multiple event handlers for the specified eventType as long as the name of each event handler function is unique.
          *
@@ -2307,9 +2304,9 @@ declare namespace Office {
          * Returns the state of the current view of the presentation (edit or read).
          *
          * @remarks
-         * Hosts: Excel, PowerPoint, Word
+         * <table><tr><td>Hosts</td><td>Excel, PowerPoint, Word</td></tr>
          *
-         * Available in Requirement set: ActiveView
+         * <tr><td>Requirement Sets</td><td>ActiveView</td></tr></table>
          *
          * Can trigger an event when the view changes.
          *
@@ -2321,9 +2318,9 @@ declare namespace Office {
          * Returns the entire document file in slices of up to 4194304 bytes (4 MB). For add-ins for iOS, file slice is supported up to 65536 (64 KB). Note that specifying file slice size of above permitted limit will result in an "Internal Error" failure.
          *
          * @remarks
-         * Hosts: Excel, PowerPoint, Word
+         * <table><tr><td>Hosts</td><td>Excel, PowerPoint, Word</td></tr>
          *
-         * Available in Requirement set: File
+         * <tr><td>Requirement Sets</td><td>File</td></tr></table>
          *
          * For add-ins running in Office host applications other than Office for iOS, the getFileAsync method supports getting files in slices of up to 4194304 bytes (4 MB). For add-ins running in Office for iOS apps, the getFileAsync method supports getting files in slices of up to 65536 (64 KB).
          *
@@ -2346,11 +2343,11 @@ declare namespace Office {
          * Gets file properties of the current document.
          *
          * @remarks
-         * Hosts: Excel, PowerPoint, Word
+         * <table><tr><td>Hosts</td><td>Excel, PowerPoint, Word</td></tr>
          *
-         * Available in Requirement set: not in a set
+         * <tr><td>Requirement Sets</td><td>not in a set</td></tr></table>
          *
-         * You get the file's URL with the url property (`asyncResult.value.url`).
+         * You get the file's URL with the url property `asyncResult.value.url`.
          *
          * @param options Provides an option for preserving context data of any type, unchanged, for use in a callback.
          * @param callback A function that is invoked when the callback returns, whose only parameter is of type AsyncResult.
@@ -2360,9 +2357,9 @@ declare namespace Office {
          * Reads the data contained in the current selection in the document.
          *
          * @remarks
-         * Hosts: Access, Excel, PowerPoint, Project, Word
+         * <table><tr><td>Hosts</td><td>Access, Excel, PowerPoint, Project, Word</td></tr>
          *
-         * Available in Requirement set: Selection
+         * <tr><td>Requirement Sets</td><td>Selection</td></tr></table>
          * 
          * In the callback function that is passed to the getSelectedDataAsync method, you can use the properties of the AsyncResult object to return the following information.
          * 
@@ -2414,19 +2411,19 @@ declare namespace Office {
          * Goes to the specified object or location in the document.
          *
          * @remarks
-         * Hosts: Excel, PowerPoint, Word
+         * <table><tr><td>Hosts</td><td>Excel, PowerPoint, Word</td></tr>
          *
-         * Available in Requirement set: not in a set
+         * <tr><td>Requirement Sets</td><td>not in a set</td></tr></table>
          *
          * PowerPoint doesn't support the goToByIdAsync method in Master Views.
          *
          * The behavior caused by the selectionMode option varies by host:
          *
-         * In Excel: Office.SelectionMode.Selected selects all content in the binding, or named item. Office.SelectionMode.None for text bindings, selects the cell; for matrix bindings, table bindings, and named items, selects the first data cell (not first cell in header row for tables).
+         * In Excel: `Office.SelectionMode.Selected` selects all content in the binding, or named item. Office.SelectionMode.None for text bindings, selects the cell; for matrix bindings, table bindings, and named items, selects the first data cell (not first cell in header row for tables).
          *
-         * In PowerPoint: Office.SelectionMode.Selected selects the slide title or first textbox on the slide. Office.SelectionMode.None Doesn't select anything.
+         * In PowerPoint: `Office.SelectionMode.Selected` selects the slide title or first textbox on the slide. `Office.SelectionMode.None` Doesn't select anything.
          *
-         * In Word: Office.SelectionMode.Selected selects all content in the binding. Office.SelectionMode.None for text bindings, moves the cursor to the beginning of the text; for matrix bindings and table bindings, selects the first data cell (not first cell in header row for tables).
+         * In Word: `Office.SelectionMode.Selected` selects all content in the binding. Office.SelectionMode.None for text bindings, moves the cursor to the beginning of the text; for matrix bindings and table bindings, selects the first data cell (not first cell in header row for tables).
          *
          * @param id The identifier of the object or location to go to.
          * @param goToType The type of the location to go to.
@@ -2438,9 +2435,9 @@ declare namespace Office {
          * Removes an event handler for the specified event type.
          *
          * @remarks
-         * Hosts: Excel, PowerPoint, Project, Word
+         * <table><tr><td>Hosts</td><td>Excel, PowerPoint, Project, Word</td></tr>
          *
-         * Available in Requirement set: DocumentEvents
+         * <tr><td>Requirement Sets</td><td>DocumentEvents</td></tr></table>
          *
          * @param eventType The event type. For document can be 'Document.SelectionChanged' or 'Document.ActiveViewChanged'.
          * @param options Provides options to determine which event handler or handlers are removed.
@@ -2451,9 +2448,9 @@ declare namespace Office {
          * Writes the specified data into the current selection.
          *
          * @remarks
-         * Hosts: Access, Excel, PowerPoint, Project, Word, Word Online
+         * <table><tr><td>Hosts</td><td>Access, Excel, PowerPoint, Project, Word, Word Online</td></tr>
          *
-         * Available in Requirement set: Selection
+         * <tr><td>Requirement Sets</td><td>Selection</td></tr></table>
          * 
          * **Application-specific behaviors**
          * 
@@ -2511,17 +2508,17 @@ declare namespace Office {
          * 
          * The possible CoercionTypes that can be used for the data parameter, or for the coercionType option, vary by host:
          *
-         * - Office.CoercionType.Text: Excel, Word, PowerPoint
+         * - `Office.CoercionType.Text`: Excel, Word, PowerPoint
          *
-         * - Office.CoercionType.Matrix: Excel, Word
+         * - `Office.CoercionType.Matrix`: Excel, Word
          *
-         * - Office.CoercionType.Table: Access, Excel, Word
+         * - `Office.CoercionType.Table`: Access, Excel, Word
          *
-         * - Office.CoercionType.Html: Word
+         * - `Office.CoercionType.Html`: Word
          *
-         * - Office.CoercionType.Ooxml: Word
+         * - `Office.CoercionType.Ooxml`: Word
          *
-         * - Office.CoercionType.Image: Excel, Word, PowerPoint
+         * - `Office.CoercionType.Image`: Excel, Word, PowerPoint
          * 
          * If the value passed for `data` is:
          * 
@@ -2611,24 +2608,24 @@ declare namespace Office {
      * Represents the document file associated with an Office Add-in.
      *
      * @remarks
+     * <table><tr><td>Hosts</td><td>PowerPoint, Word</td></tr></table>
+     * 
      * Access the File object with the AsyncResult.value property in the callback function passed to the Document.getFileAsync method.
-     *
-     * Hosts: PowerPoint, Word
      */
     interface File {
         /**
          * Gets the document file size in bytes.
          *
          * @remarks
-         * Hosts: PowerPoint, Word
+         * <table><tr><td>Hosts</td><td>PowerPoint, Word</td></tr>
          *
-         * Available in Requirement set: File
+         * <tr><td>Requirement Sets</td><td>File</td></tr></table>
          */
         size: number;
         /**
          * Gets the number of slices into which the file is divided.
          * @remarks
-         * Hosts: PowerPoint, Word
+         * <table><tr><td>Hosts</td><td>PowerPoint, Word</td></tr></table>
          */
         sliceCount: number;
         /**
@@ -2636,9 +2633,9 @@ declare namespace Office {
          * 
          * @remarks
          * 
-         * Hosts: PowerPoint, Word
+         * <table><tr><td>Hosts</td><td>PowerPoint, Word</td></tr>
          * 
-         * Available in Requirement set: File
+         * <tr><td>Requirement Sets</td><td>File</td></tr></table>
          * 
          * No more than two documents are allowed to be in memory; otherwise the Document.getFileAsync operation will fail. Use the File.closeAsync method to close the file when you are finished working with it.
          * 
@@ -2674,9 +2671,9 @@ declare namespace Office {
          * Returns the specified slice.
          * 
          * @remarks
-         * Hosts: PowerPoint, Word
+         * <table><tr><td>Hosts</td><td>PowerPoint, Word</td></tr>
          * 
-         * Available in Requirement set: File
+         * <tr><td>Requirement Sets</td><td>File</td></tr></table>
          * 
          * In the callback function passed to the getSliceAsync method, you can use the properties of the AsyncResult object to return the following information.
          * 
@@ -2718,9 +2715,9 @@ declare namespace Office {
      * Represents a binding in two dimensions of rows and columns.
      *
      * @remarks
-     * Hosts: Excel, Word
+     * <table><tr><td>Hosts</td><td>Excel, Word</td></tr>
      *
-     * Available in Requirement set: MatrixBindings
+     * <tr><td>Requirement Sets</td><td>MatrixBindings</td></tr></table>
      *
      * The MatrixBinding object inherits the id property, type property, getDataAsync method, and setDataAsync method from the Binding object.
      */
@@ -2729,18 +2726,18 @@ declare namespace Office {
         * Gets the number of columns in the matrix data structure, as an integer value.
         *
         * @remarks
-        * Hosts: Access, Excel, PowerPoint, Project, Word
+        * <table><tr><td>Hosts</td><td>Access, Excel, PowerPoint, Project, Word</td></tr>
         *
-        * Available in Requirement set: MatrixBindings
+        * <tr><td>Requirement Sets</td><td>MatrixBindings</td></tr></table>
         */
         columnCount: number;
         /**
         * Gets the number of rows in the matrix data structure, as an integer value.
         *
         * @remarks
-        * Hosts: Access, Excel, PowerPoint, Project, Word
+        * <table><tr><td>Hosts</td><td>Access, Excel, PowerPoint, Project, Word</td></tr>
         *
-        * Available in Requirement set: MatrixBindings
+        * <tr><td>Requirement Sets</td><td>MatrixBindings</td></tr></table>
         */
         rowCount: number;
     }
@@ -2748,15 +2745,17 @@ declare namespace Office {
      * Represents custom settings for a task pane or content add-in that are stored in the host document as name/value pairs.
      *
      * @remarks
-     * The settings created by using the methods of the Settings object are saved per add-in and per document. That is, they are available only to the add-in that created them, and only from the document in which they are saved.
+     * <table><tr><td>Hosts</td><td>Access, Excel, PowerPoint, Word</td></tr>
+     *
+     * <tr><td>Requirement Sets</td><td>Settings</td></tr></table>
+     * 
+     * The settings created by using the methods of the Settings object are saved per add-in and per document. 
+     * That is, they are available only to the add-in that created them, and only from the document in which they are saved.
      *
      * The name of a setting is a string, while the value can be a string, number, boolean, null, object, or array.
      *
-     * The Settings object is automatically loaded as part of the Document object, and is available by calling the settings property of that object when the add-in is activated. The developer is responsible for calling the saveAsync method after adding or deleting settings to save the settings in the document.
-     *
-     * Hosts: Access, Excel, PowerPoint, Word
-     *
-     * Available in Requirement set: Settings
+     * The Settings object is automatically loaded as part of the Document object, and is available by calling the settings property of that object when the add-in is activated. 
+     * The developer is responsible for calling the saveAsync method after adding or deleting settings to save the settings in the document.
      */
     interface Settings {
         /**
@@ -2765,11 +2764,12 @@ declare namespace Office {
          * Important: Your add-in's code can register a handler for the settingsChanged event when the add-in is running with any Excel client, but the event will fire only when the add-in is loaded with a spreadsheet that is opened in Excel Online, and more than one user is editing the spreadsheet (co-authoring). Therefore, effectively the settingsChanged event is supported only in Excel Online in co-authoring scenarios.
          *
          * @remarks
+         *
+         * <table><tr><td>Hosts</td><td>Excel</td></tr>
+         *
+         * <tr><td>Requirement Sets</td><td>Settings</td></tr></table>
+         * 
          * You can add multiple event handlers for the specified eventType as long as the name of each event handler function is unique.
-         *
-         * Hosts: Excel
-         *
-         * Available in Requirement set: Settings
          *
          * @param eventType Specifies the type of event to add. Required.
          * @param handler The event handler function to add. Required.
@@ -2804,9 +2804,9 @@ declare namespace Office {
          * Retrieves the specified setting.
          *
          * @remarks
-         * Hosts: Access, Excel, PowerPoint, Word
+         * <table><tr><td>Hosts</td><td>Access, Excel, PowerPoint, Word</td></tr>
          *
-         * Available in Requirement set: Settings
+         * <tr><td>Requirement Sets</td><td>Settings</td></tr></table>
          *
          * @param settingName The case-sensitive name of the setting to retrieve.
          * @returns An object that has property names mapped to JSON serialized values.
@@ -2816,7 +2816,15 @@ declare namespace Office {
          * Reads all settings persisted in the document and refreshes the content or task pane add-in's copy of those settings held in memory.
          *
          * @remarks
-         * This method is useful in Word and PowerPoint coauthoring scenarios when multiple instances of the same add-in are working against the same document. Because each add-in is working against an in-memory copy of the settings loaded from the document at the time the user opened it, the settings values used by each user can get out of sync. This can happen whenever an instance of the add-in calls the Settings.saveAsync method to persist all of that user's settings to the document. Calling the refreshAsync method from the event handler for the settingsChanged event of the add-in will refresh the settings values for all users.
+         * 
+         * <table><tr><td>Hosts</td><td>Access, Excel, PowerPoint, Word</td></tr>
+         *
+         * <tr><td>Requirement Sets</td><td>Settings</td></tr></table>
+         * 
+         * This method is useful in Word and PowerPoint coauthoring scenarios when multiple instances of the same add-in are working against the same document. 
+         * Because each add-in is working against an in-memory copy of the settings loaded from the document at the time the user opened it, the settings values used by each user can get out of sync. 
+         * This can happen whenever an instance of the add-in calls the Settings.saveAsync method to persist all of that user's settings to the document. 
+         * Calling the refreshAsync method from the event handler for the settingsChanged event of the add-in will refresh the settings values for all users.
          * 
          * The refreshAsync method can be called from add-ins created for Excel, but since it doesn't support coauthoring there is no reason to do so.
          *
@@ -2844,10 +2852,6 @@ declare namespace Office {
          *     <td>A user-defined item of any type that is returned in the AsyncResult object without being altered.</td>
          *   </tr>
          * </table>
-         * 
-         * Hosts: Access, Excel, PowerPoint, Word
-         *
-         * Available in Requirement set: Settings
          *
          * @param callback Optional. A function that is invoked when the callback returns, whose only parameter is of type AsyncResult. When the function you passed to the callback parameter executes, it receives an AsyncResult object that you can access from the callback function's only parameter.
          */
@@ -2858,11 +2862,11 @@ declare namespace Office {
          * Important: Be aware that the Settings.remove method affects only the in-memory copy of the settings property bag. To persist the removal of the specified setting in the document, at some point after calling the Settings.remove method and before the add-in is closed, you must call the Settings.saveAsync method.
          *
          * @remarks
+         * <table><tr><td>Hosts</td><td>Access, Excel, PowerPoint, Word</td></tr>
+         *
+         * <tr><td>Requirement Sets</td><td>Settings</td></tr></table>
+         * 
          * null is a valid value for a setting. Therefore, assigning null to the setting will not remove it from the settings property bag.
-         *
-         * Hosts: Access, Excel, PowerPoint, Word
-         *
-         * Available in Requirement set: Settings
          *
          * @param settingName The case-sensitive name of the setting to remove.
          */
@@ -2873,9 +2877,9 @@ declare namespace Office {
          * @remarks
          * If the optional handler parameter is omitted when calling the removeHandlerAsync method, all event handlers for the specified eventType will be removed.
          *
-         * Hosts: Access, Excel, PowerPoint
+         * <table><tr><td>Hosts</td><td>Access, Excel, PowerPoint</td></tr>
          *
-         * Available in Requirement set: Settings
+         * <tr><td>Requirement Sets</td><td>Settings</td></tr></table>
          *
          * @param eventType Specifies the type of event to remove. Required.
          * @param options Provides options to determine which event handler or handlers are removed.
@@ -2887,10 +2891,15 @@ declare namespace Office {
         removeHandlerAsync(eventType: EventType, options?: RemoveHandlerOptions, callback?: (result: AsyncResult) => void): void;
         /**
          * Persists the in-memory copy of the settings property bag in the document.
-         * @remarks
-         * Any settings previously saved by an add-in are loaded when it is initialized, so during the lifetime of the session you can just use the set and get methods to work with the in-memory copy of the settings property bag. When you want to persist the settings so that they are available the next time the add-in is used, use the saveAsync method.
+         * 
+         * @remarks 
+         * <table><tr><td>Hosts</td><td>Access, Excel, PowerPoint, Word</td></tr></table>
+         * 
+         * Any settings previously saved by an add-in are loaded when it is initialized, so during the lifetime of the session you can just use the set and get methods to work with the in-memory copy of the settings property bag. 
+         * When you want to persist the settings so that they are available the next time the add-in is used, use the saveAsync method.
          *
-         * Note: The saveAsync method persists the in-memory settings property bag into the document file; however, the changes to the document file itself are saved only when the user (or AutoRecover setting) saves the document to the file system. The refreshAsync method is only useful in coauthoring scenarios (which are only supported in Word) when other instances of the same add-in might change the settings and those changes should be made available to all instances.
+         * Note: The saveAsync method persists the in-memory settings property bag into the document file; however, the changes to the document file itself are saved only when the user (or AutoRecover setting) saves the document to the file system. 
+         * The refreshAsync method is only useful in coauthoring scenarios (which are only supported in Word) when other instances of the same add-in might change the settings and those changes should be made available to all instances.
          * 
          * <table>
          *   <tr>
@@ -2915,8 +2924,6 @@ declare namespace Office {
          *   </tr>
          * </table>
          * 
-         * Hosts: Access, Excel, PowerPoint, Word
-         * 
          * @param options Provides options for saving settings.
          * @param callback Optional. A function that is invoked when the callback returns, whose only parameter is of type AsyncResult. When the function you passed to the callback parameter executes, it receives an AsyncResult object that you can access from the callback function's only parameter to return the following information.
          */
@@ -2924,15 +2931,16 @@ declare namespace Office {
         /**
          * Sets or creates the specified setting.
          *
-         * Important: Be aware that the Settings.set method affects only the in-memory copy of the settings property bag. To make sure that additions or changes to settings will be available to your add-in the next time the document is opened, at some point after calling the Settings.set method and before the add-in is closed, you must call the Settings.saveAsync method to persist settings in the document.
+         * Important: Be aware that the Settings.set method affects only the in-memory copy of the settings property bag. 
+         * To make sure that additions or changes to settings will be available to your add-in the next time the document is opened, at some point after calling the Settings.set method and before the add-in is closed, you must call the Settings.saveAsync method to persist settings in the document.
          *
          * @remarks
-         * The set method creates a new setting of the specified name if it does not already exist, or sets an existing setting of the specified name in the in-memory copy of the settings property bag. After you call the Settings.saveAsync method, the value is stored in the document as the serialized JSON representation of its data type. A maximum of 2MB is available for the settings of each add-in.
+         * <table><tr><td>Hosts</td><td>Access, Excel, PowerPoint, Word</td></tr>
          *
-         * Hosts: Access, Excel, PowerPoint, Word
-         *
-         * Available in Requirement set: Settings
-         *
+         * <tr><td>Requirement Sets</td><td>Settings</td></tr></table>
+         * 
+         * The set method creates a new setting of the specified name if it does not already exist, or sets an existing setting of the specified name in the in-memory copy of the settings property bag. 
+         * After you call the Settings.saveAsync method, the value is stored in the document as the serialized JSON representation of its data type. A maximum of 2MB is available for the settings of each add-in.
          * @param settingName The case-sensitive name of the setting to set or create.
          * @param value Specifies the value to be stored.
          */
@@ -2942,40 +2950,40 @@ declare namespace Office {
      * Represents a slice of a document file.
      *
      * @remarks
+     * <table><tr><td>Hosts</td><td>PowerPoint, Word</td></tr>
+     *
+     * <tr><td>Requirement Sets</td><td>File</td></tr></table>
+     * 
      * The Slice object is accessed with the File.getSliceAsync method.
-     *
-     * Hosts: PowerPoint, Word
-     *
-     * Available in Requirement set: File
      */
     interface Slice {
         /**
          * Gets the raw data of the file slice in `Office.FileType.Text` ("text") or `Office.FileType.Compressed` ("compressed") format as specified by the fileType parameter of the call to the Document.getFileAsync method.
          *
          * @remarks
+         * <table><tr><td>Hosts</td><td>PowerPoint, Word</td></tr>
+         *
+         * <tr><td>Requirement Sets</td><td>File</td></tr></table>
+         * 
          * Files in the "compressed" format will return a byte array that can be transformed to a base64-encoded string if required.
-         *
-         * Hosts: PowerPoint, Word
-         *
-         * Available in Requirement set: File
          */
         data: any;
         /**
          * Gets the zero-based index of the file slice.
          *
          * @remarks
-         * Hosts: PowerPoint, Word
+         * <table><tr><td>Hosts</td><td>PowerPoint, Word</td></tr>
          *
-         * Available in Requirement set: File
+         * <tr><td>Requirement Sets</td><td>File</td></tr></table>
          */
         index: number;
         /**
          * Gets the size of the slice in bytes.
          *
          * @remarks
-         * Hosts: PowerPoint, Word
+         * <table><tr><td>Hosts</td><td>PowerPoint, Word</td></tr>
          *
-         * Available in Requirement set: File
+         * <tr><td>Requirement Sets</td><td>File</td></tr></table>
          */
         size: number;
     }
@@ -2983,9 +2991,9 @@ declare namespace Office {
     * Represents a binding in two dimensions of rows and columns, optionally with headers.
     *
     * @remarks
-    * Hosts: Access, Excel, PowerPoint, Project, Word
+    * <table><tr><td>Hosts</td><td>Access, Excel, PowerPoint, Project, Word</td></tr>
     *
-    * Available in Requirement set: TableBindings
+    * <tr><td>Requirement Sets</td><td>TableBindings</td></tr></table>
     *
     * The TableBinding object inherits the id property, type property, getDataAsync method, and setDataAsync method from the Binding object.
     *
@@ -2996,27 +3004,27 @@ declare namespace Office {
         * Gets the number of columns in the TableBinding, as an integer value.
         *
         * @remarks
-        * Hosts: Access, Excel,Word
+        * <table><tr><td>Hosts</td><td>Access, Excel,Word</td></tr>
         *
-        * Available in Requirement set: TableBindings
+        * <tr><td>Requirement Sets</td><td>TableBindings</td></tr></table>
         */
         columnCount: number;
         /**
         * True, if the table has headers; otherwise false.
         *
         * @remarks
-        * Hosts: Access, Excel, PowerPoint, Project, Word
+        * <table><tr><td>Hosts</td><td>Access, Excel, PowerPoint, Project, Word</td></tr>
         *
-        * Available in Requirement set: TableBindings
+        * <tr><td>Requirement Sets</td><td>TableBindings</td></tr></table>
         */
         hasHeaders: boolean;
          /**
         * Gets the number of rows in the TableBinding, as an integer value.
         *
         * @remarks
-        * Hosts: Access, Excel,Word
+        * <table><tr><td>Hosts</td><td>Access, Excel,Word</td></tr>
         *
-        * Available in Requirement set: TableBindings
+        * <tr><td>Requirement Sets</td><td>TableBindings</td></tr></table>
         *
         * When you insert an empty table by selecting a single row in Excel 2013 and Excel Online (using Table on the Insert tab), both Office host applications create a single row of headers followed by a single blank row. However, if your add-in's script creates a binding for this newly inserted table (for example, by using the addFromSelectionAsync method), and then checks the value of the rowCount property, the value returned will differ depending whether the spreadsheet is open in Excel 2013 or Excel Online.
 
@@ -3033,9 +3041,9 @@ declare namespace Office {
          * Adds the specified data to the table as additional columns.
          *
          * @remarks
-         * Hosts: Excel, Word
+         * <table><tr><td>Hosts</td><td>Excel, Word</td></tr>
          *
-         * Available in Requirement set: TableBindings
+         * <tr><td>Requirement Sets</td><td>TableBindings</td></tr></table>
          *
          * To add one or more columns specifying the values of the data and headers, pass a TableData object as the data parameter. To add one or more columns specifying only the data, pass an array of arrays ("matrix") as the data parameter.
          *
@@ -3058,9 +3066,9 @@ declare namespace Office {
          * Adds the specified data to the table as additional rows.
          *
          * @remarks
-         * Hosts: Access, Excel, Word
+         * <table><tr><td>Hosts</td><td>Access, Excel, Word</td></tr>
          *
-         * Available in Requirement set: TableBindings
+         * <tr><td>Requirement Sets</td><td>TableBindings</td></tr></table>
          *
          * To add one or more columns specifying the values of the data and headers, pass a TableData object as the data parameter. To add one or more columns specifying only the data, pass an array of arrays ("matrix") as the data parameter.
          *
@@ -3083,9 +3091,9 @@ declare namespace Office {
          * Deletes all non-header rows and their values in the table, shifting appropriately for the host application.
          *
          * @remarks
-         * Hosts: Access, Excel, Word
+         * <table><tr><td>Hosts</td><td>Access, Excel, Word</td></tr>
          *
-         * Available in Requirement set: TableBindings
+         * <tr><td>Requirement Sets</td><td>TableBindings</td></tr></table>
          *
          * In Excel, if the table has no header row, this method will delete the table itself.
          *
@@ -3097,9 +3105,9 @@ declare namespace Office {
          * Clears formatting on the bound table.
          *
          * @remarks
-         * Hosts: Excel
+         * <table><tr><td>Hosts</td><td>Excel</td></tr>
          *
-         * Available in Requirement set: Not in a set
+         * <tr><td>Requirement Sets</td><td>Not in a set</td></tr></table>
          *
          * See {@link https://docs.microsoft.com/en-us/office/dev/add-ins/excel/excel-add-ins-tables#format-a-table | Format tables in add-ins for Excel} for more information.
          *
@@ -3119,9 +3127,9 @@ declare namespace Office {
          * Sets formatting on specified items and data in the table.
          *
          * @remarks
-         * Hosts: Excel
+         * <table><tr><td>Hosts</td><td>Excel</td></tr>
          *
-         * Available in Requirement set: Not in a set
+         * <tr><td>Requirement Sets</td><td>Not in a set</td></tr></table>
          * 
          * **Specifying the cellFormat parameter**
          * 
@@ -3168,7 +3176,9 @@ declare namespace Office {
          * The `format:` property specifies values that correspond to a subset of the settings available in the Format Cells dialog box in Excel (Right-click > Format Cells or Home > Format > Format Cells).
          * 
          * You specify the value of the `format:` property as a list of one or more property name - value pairs in a JavaScript object literal. The property name specifies the name of the formatting property to set, and value specifies the property value. 
-         * You can specify multiple values for a given format, such as both a font's color and size. Here's three `format:` property value examples:
+         * You can specify multiple values for a given format, such as both a font's color and size. 
+         * 
+         * Here's three `format:` property value examples:
          * 
          * `//Set cells: font color to green and size to 15 points.`
          * 
@@ -3182,13 +3192,14 @@ declare namespace Office {
          * 
          * `format: {backgroundColor: "red", alignHorizontal: "center"}`
          * 
+         * 
          * You can specify number formats by specifying the number formatting "code" string in the `numberFormat:` property. 
          * The number format strings you can specify correspond to those you can set in Excel using the Custom category on the Number tab of the Format Cells dialog box. 
          * This example shows how to format a number as a percentage with two decimal places:
          * 
          * `format: {numberFormat:"0.00%"}`
          * 
-         * For more detail, see how to {@link create a custom number format | https://support.office.com/article/create-or-delete-a-custom-number-format-78f2a361-936b-4c03-8772-09fab54be7f4}.
+         * For more detail, see how to {@link https://support.office.com/article/create-or-delete-a-custom-number-format-78f2a361-936b-4c03-8772-09fab54be7f4 | Create a custom number format}.
          * 
          * To set formatting on tables when writing data, use the tableOptions and cellFormat optional parameters of the `Document.setSelectedDataAsync` or `TableBinding.setDataAsync` methods.
          * 
@@ -3201,7 +3212,7 @@ declare namespace Office {
          * 
          *  - To clear formatting, use the `TableBinding.clearFormats` method.
          * 
-         * For more details and examples, see {@link How to format tables in add-ins for Excel | https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-tables#format-a-table}.
+         * For more details and examples, see {@link https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-tables#format-a-table | How to format tables in add-ins for Excel}.
          * 
          * In the callback function passed to the goToByIdAsync method, you can use the properties of the AsyncResult object to return the following information.
          * 
@@ -3237,9 +3248,9 @@ declare namespace Office {
          * Updates table formatting options on the bound table.
          *
          * @remarks
-         * Hosts: Excel
+         * <table><tr><td>Hosts</td><td>Excel</td></tr>
          *
-         * Available in Requirement set: Not in a set
+         * <tr><td>Requirement Sets</td><td>Not in a set</td></tr></table>
          * 
          * In the callback function passed to the goToByIdAsync method, you can use the properties of the AsyncResult object to return the following information.
          * 
@@ -3278,9 +3289,9 @@ declare namespace Office {
      * Represents the data in a table or a {@link Office.TableBinding}.
      *
      * @remarks
-     * Hosts: Excel, Word
+     * <table><tr><td>Hosts</td><td>Excel, Word</td></tr>
      *
-     * Available in Requirement set: TableBindings
+     * <tr><td>Requirement Sets</td><td>TableBindings</td></tr></table>
      */
     class TableData {
         constructor(rows: any[][], headers: any[]);
@@ -3289,6 +3300,10 @@ declare namespace Office {
          * Gets or sets the headers of the table.
          * 
          * @remarks
+         * <table><tr><td>Hosts</td><td>Excel, Word</td></tr>
+         *
+         * <tr><td>Requirement Sets</td><td>TableBindings</td></tr></table>
+         * 
          * To specify headers, you must specify an array of arrays that corresponds to the structure of the table. For example, to specify headers for a two-column table you would set the header property to [['header1', 'header2']].
          *
          * If you specify null for the headers property (or leaving the property empty when you construct a TableData object), the following results occur when your code executes:
@@ -3296,16 +3311,16 @@ declare namespace Office {
          * - If you insert a new table, the default column headers for the table are created.
          *
          * - If you overwrite or update an existing table, the existing headers are not altered.
-         *
-         * Hosts: Excel, Word
-         *
-         * Available in Requirement set: TableBindings
          */
         headers: any[];
         /**
          * Gets or sets the rows in the table. Returns an array of arrays that contains the data in the table. Returns an empty array ``, if there are no rows.
          * 
          * @remarks
+         * <table><tr><td>Hosts</td><td>Excel, Word</td></tr>
+         *
+         * <tr><td>Requirement Sets</td><td>TableBindings</td></tr></table>
+         * 
          * To specify rows, you must specify an array of arrays that corresponds to the structure of the table. For example, to specify two rows of string values in a two-column table you would set the rows property to [['a', 'b'], ['c', 'd']].
          *
          * If you specify null for the rows property (or leave the property empty when you construct a TableData object), the following results occur when your code executes:
@@ -3313,10 +3328,6 @@ declare namespace Office {
          * - If you insert a new table, a blank row will be inserted.
          *
          * - If you overwrite or update an existing table, the existing rows are not altered.
-         *
-         * Hosts: Excel, Word
-         *
-         * Available in Requirement set: TableBindings
          */
         rows: any[][];
     }
@@ -3324,7 +3335,7 @@ declare namespace Office {
      * Specifies enumerated values for the cells: property in the cellFormat parameter of {@link https://docs.microsoft.com/en-us/office/dev/add-ins/excel/excel-add-ins-tables#format-a-table | table formatting methods}.
      *
      * @remarks
-     * Hosts: Excel
+     * <table><tr><td>Hosts</td><td>Excel</td></tr></table>
      */
     enum Table {
         /**
@@ -3344,9 +3355,9 @@ declare namespace Office {
     * Represents a bound text selection in the document.
     *
     * @remarks
-    * Hosts: Access, Excel, PowerPoint, Project, Word
+    * <table><tr><td>Hosts</td><td>Access, Excel, PowerPoint, Project, Word</td></tr>
     *
-    * Available in Requirement set: TextBindings
+    * <tr><td>Requirement Sets</td><td>TextBindings</td></tr></table>
     *
     * The TextBinding object inherits the id property, type property, getDataAsync method, and setDataAsync method from the {@link Office.Binding} object. It does not implement any additional properties or methods of its own.
     */
@@ -3355,9 +3366,9 @@ declare namespace Office {
      * Specifies the project fields that are available as a parameter for the getProjectFieldAsync method.
      *
      * @remarks
+     * <table><tr><td>Hosts</td><td>Project</td></tr></table>
+     * 
      * A ProjectProjectFields constant can be used as a parameter of the getProjectFieldAsync method.
-     *
-     * Hosts: Project
      */
     enum ProjectProjectFields {
         /**
@@ -4228,7 +4239,7 @@ declare namespace Office {
      *
      * For more information about working with fields in Project, see the {@link https://support.office.com/article/Available-fields-reference-615a4563-1cc3-40f4-b66f-1b17e793a460 | Available fields} reference. In Project Help, search for Available fields.
      *
-     * Hosts: Project
+     * <table><tr><td>Hosts</td><td>Project</td></tr></table>
      */
     enum ProjectTaskFields {
         /**
@@ -5362,9 +5373,9 @@ declare namespace Office {
      * Specifies the types of views that the getSelectedViewAsync method can recognize.
      *
      * @remarks
+     * <table><tr><td>Hosts</td><td>Project</td></tr></table>
+     * 
      * The getSelectedViewAsync method returns the ProjectViewTypes constant value and name that corresponds to the active view.
-     *
-     * Hosts: Project
      */
     enum ProjectViewTypes {
         /**
@@ -6383,9 +6394,9 @@ declare namespace Office {
      * [Api set: Mailbox 1.0]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
      *
-     * Applicable Outlook mode: Read
+     * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
      */
     interface AttachmentDetails {
         /**
@@ -6419,9 +6430,9 @@ declare namespace Office {
      * [Api set: Mailbox 1.1]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
      *
-     * Applicable Outlook mode: Compose or read
+     * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
      */
     interface Body {
         /**
@@ -6434,9 +6445,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.3]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          * 
          * In addition to the main signature, this method also has this signature:
          * 
@@ -6458,9 +6469,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.3]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          *
          * @param coercionType The format for the returned body.
          * @param callback Optional. When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult. The body is provided in the requested format in the asyncResult.value property.
@@ -6473,9 +6484,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr></table>
          *
          * @param options Optional. An object literal that contains one or more of the following properties.
          *        asyncContext: Developers can provide any object they wish to access in the callback method.
@@ -6492,11 +6503,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          * 
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          * 
-         * Errors: DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.
+         * <tr><td>Errors</td><td>DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.</td></tr></table>
          * 
          * In addition to the main signature, this method also has these signatures:
          * 
@@ -6523,11 +6534,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          * 
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          * 
-         * Errors: DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.
+         * <tr><td>Errors</td><td>DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.</td></tr></table>
          *
          * @param data The string to be inserted at the beginning of the body. The string is limited to 1,000,000 characters.
          * @param options Optional. An object literal that contains one or more of the following properties.
@@ -6545,9 +6556,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
-         * Applicable Outlook mode: Compose
-         * Errors: DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
+         * <tr><td>Errors</td><td>DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.</td></tr></table>
          *
          * @param data The string to be inserted at the beginning of the body. The string is limited to 1,000,000 characters.
          * @param callback Optional. When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult. Any errors encountered will be provided in the asyncResult.error property.
@@ -6563,9 +6574,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
-         * Applicable Outlook mode: Compose
-         * Errors: DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
+         * <tr><td>Errors</td><td>DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.</td></tr></table>
          *
          * @param data The string to be inserted at the beginning of the body. The string is limited to 1,000,000 characters.
          */
@@ -6580,13 +6591,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.3]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.
-         *
-         * InvalidFormatError - The options.coercionType parameter is set to Office.CoercionType.Html and the message body is in plain text.
+         * <tr><td>Errors</td><td>DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.</td></tr><tr><td></td><td>InvalidFormatError - The options.coercionType parameter is set to Office.CoercionType.Html and the message body is in plain text.</td></tr></table>
          * 
          * In addition to the main signature, this method also has these signatures:
          * 
@@ -6613,13 +6622,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.3]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.
-         *
-         * InvalidFormatError - The options.coercionType parameter is set to Office.CoercionType.Html and the message body is in plain text.
+         * <tr><td>Errors</td><td>DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.</td></tr><tr><td></td><td>InvalidFormatError - The options.coercionType parameter is set to Office.CoercionType.Html and the message body is in plain text.</td></tr></table>
          *
          * @param data The string that will replace the existing body. The string is limited to 1,000,000 characters.
          * @param options Optional. An object literal that contains one or more of the following properties.
@@ -6637,13 +6644,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.3]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.
-         *
-         * InvalidFormatError - The options.coercionType parameter is set to Office.CoercionType.Html and the message body is in plain text.
+         * <tr><td>Errors</td><td>DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.</td></tr><tr><td></td><td>InvalidFormatError - The options.coercionType parameter is set to Office.CoercionType.Html and the message body is in plain text.</td></tr></table>
          *
          * @param data The string that will replace the existing body. The string is limited to 1,000,000 characters.
          * @param callback Optional. When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult.  Any errors encountered will be provided in the asyncResult.error property.
@@ -6659,13 +6664,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.3]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.
-         *
-         * InvalidFormatError - The options.coercionType parameter is set to Office.CoercionType.Html and the message body is in plain text.
+         * <tr><td>Errors</td><td>DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.</td></tr><tr><td></td><td>InvalidFormatError - The options.coercionType parameter is set to Office.CoercionType.Html and the message body is in plain text.</td></tr></table>
          *
          * @param data The string that will replace the existing body. The string is limited to 1,000,000 characters.
          */
@@ -6681,13 +6684,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.
-         *
-         * InvalidFormatError - The options.coercionType parameter is set to Office.CoercionType.Html and the message body is in plain text.
+         * <tr><td>Errors</td><td>DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.</td></tr><tr><td></td><td>InvalidFormatError - The options.coercionType parameter is set to Office.CoercionType.Html and the message body is in plain text.</td></tr></table>
          * 
          * In addition to the main signature, this method also has these signatures:
          * 
@@ -6714,13 +6715,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.
-         *
-         * InvalidFormatError - The options.coercionType parameter is set to Office.CoercionType.Html and the message body is in plain text.
+         * <tr><td>Errors</td><td>DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.</td></tr><tr><td></td><td>InvalidFormatError - The options.coercionType parameter is set to Office.CoercionType.Html and the message body is in plain text.</td></tr></table>
          *
          * @param data The string that will replace the existing body. The string is limited to 1,000,000 characters.
          * @param options Optional. An object literal that contains one or more of the following properties.
@@ -6738,13 +6737,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.
-         *
-         * InvalidFormatError - The options.coercionType parameter is set to Office.CoercionType.Html and the message body is in plain text.
+         * <tr><td>Errors</td><td>DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.</td></tr><tr><td></td><td>InvalidFormatError - The options.coercionType parameter is set to Office.CoercionType.Html and the message body is in plain text.</td></tr></table>
          *
          * @param data The string that will replace the existing body. The string is limited to 1,000,000 characters.
          * @param callback Optional. When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult.  Any errors encountered will be provided in the asyncResult.error property.
@@ -6760,13 +6757,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.
-         *
-         * InvalidFormatError - The options.coercionType parameter is set to Office.CoercionType.Html and the message body is in plain text.
+         * <tr><td>Errors</td><td>DataExceedsMaximumSize - The data parameter is longer than 1,000,000 characters.</td></tr><tr><td></td><td>InvalidFormatError - The options.coercionType parameter is set to Office.CoercionType.Html and the message body is in plain text.</td></tr></table>
          *
          * @param data The string that will replace the existing body. The string is limited to 1,000,000 characters.
          */
@@ -6780,9 +6775,9 @@ declare namespace Office {
      * [Api set: Mailbox 1.0]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: Restricted
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>Restricted</td></tr>
      *
-     * Applicable Outlook mode: Read
+     * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
      */
     interface Contact {
         /**
@@ -6818,9 +6813,9 @@ declare namespace Office {
      * [Api set: Mailbox 1.0]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
      *
-     * Applicable Outlook mode: Compose or read
+     * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
      */
     interface CustomProperties {
         /**
@@ -6831,9 +6826,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.0]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         get(name: string): any;
         /**
@@ -6846,9 +6841,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.0]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          *
          * @param name The name of the property to be set.
          * @param value The value of the property to be set.
@@ -6863,9 +6858,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.0]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         remove(name: string): void;
         /**
@@ -6881,9 +6876,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.0]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         saveAsync(callback?: (result: AsyncResult) => void, asyncContext?: any): void;
     }
@@ -6893,9 +6888,9 @@ declare namespace Office {
      * [Api set: Mailbox 1.0]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
      *
-     * Applicable Outlook mode: Compose or read
+     * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
      */
     interface Diagnostics {
         /**
@@ -6906,9 +6901,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.0]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         hostName: string;
         /**
@@ -6919,9 +6914,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.0]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         hostVersion: string;
         /**
@@ -6942,9 +6937,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.0]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         OWAView: "string";
     }
@@ -6954,9 +6949,9 @@ declare namespace Office {
      * [Api set: Mailbox 1.0]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
      *
-     * Applicable Outlook mode: Compose or read
+     * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
      */
     interface EmailAddressDetails {
         /**
@@ -6982,9 +6977,9 @@ declare namespace Office {
      * [Api set: Mailbox 1.0]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
      *
-     * Applicable Outlook mode: Read
+     * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
      */
     interface EmailUser {
         /**
@@ -7014,9 +7009,9 @@ declare namespace Office {
      * [Api set: Mailbox 1.0]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
      *
-     * Applicable Outlook mode: Read
+     * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
      */
     interface Entities {
         /**
@@ -7055,9 +7050,9 @@ declare namespace Office {
      * [Api set: Mailbox Preview]
      * 
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
      * 
-     * Applicable Outlook mode: Compose
+     * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr></table>
      * 
      * @beta
      */
@@ -7072,9 +7067,9 @@ declare namespace Office {
          * [Api set: Mailbox Preview]
          * 
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          * 
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signature:
          * 
@@ -7096,9 +7091,9 @@ declare namespace Office {
          * 
          * @remarks
          * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          * 
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr></table>
          * 
          * @param callback When the method completes, the function passed in the callback parameter is called with a single parameter, asyncResult, which is an AsyncResult object.
          */
@@ -7129,9 +7124,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr></table>
          */
         end: Time;
         /**
@@ -7141,9 +7136,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr></table>
          */
         location: Location;
         /**
@@ -7153,9 +7148,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr></table>
          */
         optionalAttendees: Recipients;
         /**
@@ -7165,9 +7160,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr></table>
          */
         requiredAttendees: Recipients;
         /**
@@ -7181,9 +7176,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr></table>
          */
         start: Time;
 
@@ -7196,9 +7191,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr></table>
          */
         body: Body;
         /**
@@ -7208,9 +7203,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr></table>
          */
         dateTimeCreated: Date;
         /**
@@ -7220,11 +7215,11 @@ declare namespace Office {
          *
          * @remarks
          *
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
+         *
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr></table>
+         *
          * Note: This member is not supported in Outlook for iOS or Outlook for Android.
-         *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
-         *
-         * Applicable Outlook mode: Appointment Organizer
          */
         dateTimeModifed: Date;
         /**
@@ -7236,9 +7231,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr></table>
          */
         itemType: Office.MailboxEnums.ItemType;
         /**
@@ -7248,9 +7243,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr></table>
          */
         notificationMessages: NotificationMessages;
 
@@ -7267,9 +7262,9 @@ declare namespace Office {
          * 
          * @remarks
          * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          * 
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr></table>
          * 
          * @beta
          */
@@ -7288,9 +7283,9 @@ declare namespace Office {
          * 
          * @remarks
          * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          * 
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr></table>
          * 
          * @beta
          */
@@ -7304,14 +7299,14 @@ declare namespace Office {
          * [Api set: Mailbox Preview]
          *
          * @remarks
+         * 
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signature:
          * 
          * `addHandlerAsync(eventType:EventType, handler: any, callback?: (result: AsyncResult) => void): void;`
-         *
-         * Applicable Outlook mode: Appointment Organizer
          * 
          * @param eventType The event that should invoke the handler.
          * @param handler The function to handle the event. The function must accept a single parameter, which is an object literal. The type property on the parameter will match the eventType parameter passed to addHandlerAsync.
@@ -7332,9 +7327,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr></table>
          * 
          * @param eventType The event that should invoke the handler.
          * @param handler The function to handle the event. The function must accept a single parameter, which is an object literal. The type property on the parameter will match the eventType parameter passed to addHandlerAsync.
@@ -7355,9 +7350,9 @@ declare namespace Office {
         *
         * @remarks
         *
-        * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+        * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
         *
-        * Applicable Outlook mode: Appointment Organizer
+        * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr></table>
         *
         * @param callback When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult.
         * @param userContext Optional. Developers can provide any object they wish to access in the callback function. This object can be accessed by the asyncResult.asyncContext property in the callback function.
@@ -7373,9 +7368,9 @@ declare namespace Office {
         *
         * @remarks
         *
-        * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+        * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
         *
-        * Applicable Outlook mode: Appointment Organizer
+        * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr></table>
         * 
         * In addition to this signature, the method also has the following signature:
         * 
@@ -7400,9 +7395,9 @@ declare namespace Office {
         *
         * @remarks
         *
-        * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+        * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
         *
-        * Applicable Outlook mode: Appointment Organizer
+        * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr></table>
         * 
         * @param eventType The event that should invoke the handler.
         * @param handler The function to handle the event. The function must accept a single parameter, which is an object literal. The type property on the parameter will match the eventType parameter passed to removeHandlerAsync.
@@ -7423,9 +7418,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr></table>
          */
         subject: Subject;
         /**
@@ -7438,17 +7433,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr>
          *
-         * Errors:
-         *
-         * AttachmentSizeExceeded - The attachment is larger than allowed.
-         *
-         * FileTypeNotSupported - The attachment has an extension that is not allowed.
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>AttachmentSizeExceeded - The attachment is larger than allowed.</td></tr><tr><td></td><td>FileTypeNotSupported - The attachment has an extension that is not allowed.</td></tr><tr><td></td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signatures:
          * 
@@ -7476,17 +7465,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr>
          *
-         * Errors:
-         *
-         * AttachmentSizeExceeded - The attachment is larger than allowed.
-         *
-         * FileTypeNotSupported - The attachment has an extension that is not allowed.
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>AttachmentSizeExceeded - The attachment is larger than allowed.</td></tr><tr><td></td><td>FileTypeNotSupported - The attachment has an extension that is not allowed.</td></tr><tr><td></td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          *
          * @param uri The URI that provides the location of the file to attach to the message or appointment. The maximum length is 2048 characters.
          * @param attachmentName The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.
@@ -7502,17 +7485,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr>
          *
-         * Errors:
-         *
-         * AttachmentSizeExceeded - The attachment is larger than allowed.
-         *
-         * FileTypeNotSupported - The attachment has an extension that is not allowed.
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>AttachmentSizeExceeded - The attachment is larger than allowed.</td></tr><tr><td></td><td>FileTypeNotSupported - The attachment has an extension that is not allowed.</td></tr><tr><td></td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          *
          * @param uri The URI that provides the location of the file to attach to the message or appointment. The maximum length is 2048 characters.
          * @param attachmentName The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.
@@ -7531,17 +7508,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr>
          *
-         * Errors:
-         *
-         * AttachmentSizeExceeded - The attachment is larger than allowed.
-         *
-         * FileTypeNotSupported - The attachment has an extension that is not allowed.
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>AttachmentSizeExceeded - The attachment is larger than allowed.</td></tr><tr><td></td><td>FileTypeNotSupported - The attachment has an extension that is not allowed.</td></tr><tr><td></td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          *
          * @param uri The URI that provides the location of the file to attach to the message or appointment. The maximum length is 2048 characters.
          * @param attachmentName The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.
@@ -7561,13 +7532,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr>
          *
-         * Errors:
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          * 
          * In addition to the main signature, this method also has these signatures:
          * 
@@ -7596,13 +7565,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr>
          *
-         * Errors:
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          *
          * @param itemId The Exchange identifier of the item to attach. The maximum length is 100 characters.
          * @param attachmentName The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.
@@ -7620,13 +7587,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr>
          *
-         * Errors:
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          *
          * @param itemId The Exchange identifier of the item to attach. The maximum length is 100 characters.
          * @param attachmentName The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.
@@ -7646,13 +7611,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr>
          *
-         * Errors:
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          *
          * @param itemId The Exchange identifier of the item to attach. The maximum length is 100 characters.
          * @param attachmentName The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.
@@ -7673,9 +7636,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: Restricted
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>Restricted</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr></table>
          */
         close(): void;
         /**
@@ -7687,11 +7650,11 @@ declare namespace Office {
          *
          * @remarks
          *
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
+         *
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr></table>
+         * 
          * More information on {@link https://docs.microsoft.com/outlook/actionable-messages/invoke-add-in-from-actionable-message | actionable messages}.
-         *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
-         *
-         * Applicable Outlook mode: Appointment Organizer
          *
          * @param options Optional. An object literal that contains one or more of the following properties.
          *        asyncContext: Developers can provide any object they wish to access in the callback method.
@@ -7700,7 +7663,7 @@ declare namespace Office {
          * @beta
          */
         getInitializationContextAsync(options?: AsyncContextOptions, callback?: (result: AsyncResult) => void): void;
-                /**
+        /**
          * Asynchronously returns selected data from the subject or body of a message.
          *
          * If there is no selection but the cursor is in the body or subject, the method returns null for the selected data. If a field other than the body or subject is selected, the method returns the InvalidSelection error.
@@ -7714,9 +7677,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr></table>
          *
          * @param coercionType Requests a format for the data. If Text, the method returns the plain text as a string , removing any HTML tags present. If HTML, the method returns the selected text, whether it is plaintext or HTML.
          * @param options An object literal that contains one or more of the following properties.
@@ -7738,9 +7701,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr></table>
          *
          * @param coercionType Requests a format for the data. If Text, the method returns the plain text as a string , removing any HTML tags present. If HTML, the method returns the selected text, whether it is plaintext or HTML.
          * @param callback When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult.
@@ -7755,11 +7718,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signatures:
          * 
@@ -7784,11 +7747,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param attachmentIndex The identifier of the attachment to remove. The maximum length of the string is 100 characters.
          */
@@ -7802,11 +7765,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param attachmentIndex The identifier of the attachment to remove. The maximum length of the string is 100 characters.
          * @param options Optional. An object literal that contains one or more of the following properties.
@@ -7822,11 +7785,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param attachmentIndex The identifier of the attachment to remove. The maximum length of the string is 100 characters.
          * @param callback Optional. When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult. If removing the attachment fails, the asyncResult.error property will contain an error code with the reason for the failure.
@@ -7852,11 +7815,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signatures:
          * 
@@ -7890,11 +7853,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          */
         saveAsync(): void;
@@ -7917,11 +7880,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param options Optional. An object literal that contains one or more of the following properties.
          *        asyncContext: Developers can provide any object they wish to access in the callback method.
@@ -7946,11 +7909,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param callback Optional. When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult. If removing the attachment fails, the asyncResult.error property will contain an error code with the reason for the failure.
          */
@@ -7964,11 +7927,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signatures:
          * 
@@ -7994,11 +7957,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param data The data to be inserted. Data is not to exceed 1,000,000 characters. If more than 1,000,000 characters are passed in, an ArgumentOutOfRange exception is thrown.
          */
@@ -8012,11 +7975,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param data The data to be inserted. Data is not to exceed 1,000,000 characters. If more than 1,000,000 characters are passed in, an ArgumentOutOfRange exception is thrown.
          * @param options Optional. An object literal that contains one or more of the following properties.
@@ -8033,11 +7996,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Organizer
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Organizer</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param data The data to be inserted. Data is not to exceed 1,000,000 characters. If more than 1,000,000 characters are passed in, an ArgumentOutOfRange exception is thrown.
          * @param callback Optional. When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult. If removing the attachment fails, the asyncResult.error property will contain an error code with the reason for the failure.
@@ -8061,9 +8024,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          */
         end: Date;
         /**
@@ -8075,9 +8038,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          */
         location: string;
         /**
@@ -8089,9 +8052,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          */
         optionalAttendees: EmailAddressDetails[];
         /**
@@ -8101,9 +8064,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          */
         organizer: EmailAddressDetails;
         /**
@@ -8115,9 +8078,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          */
         requiredAttendees: EmailAddressDetails[];
         /**
@@ -8129,9 +8092,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          */
         start: Date;
 
@@ -8144,9 +8107,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          */
         body: Body;
         /**
@@ -8156,9 +8119,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          */
         dateTimeCreated: Date;
         /**
@@ -8168,11 +8131,11 @@ declare namespace Office {
          *
          * @remarks
          *
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
+         *
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
+         *
          * Note: This member is not supported in Outlook for iOS or Outlook for Android.
-         *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
-         *
-         * Applicable Outlook mode: Appointment Attendee
          */
         dateTimeModifed: Date;
         /**
@@ -8184,9 +8147,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          */
         itemType: Office.MailboxEnums.ItemType;
         /**
@@ -8196,9 +8159,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          */
         notificationMessages: NotificationMessages;
 
@@ -8215,9 +8178,9 @@ declare namespace Office {
          * 
          * @remarks
          * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          * 
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          * 
          * @beta
          */
@@ -8236,9 +8199,9 @@ declare namespace Office {
          * 
          * @remarks
          * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          * 
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          * 
          * @beta
          */
@@ -8253,9 +8216,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signature:
          * 
@@ -8280,9 +8243,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          * 
          * @param eventType The event that should invoke the handler.
          * @param handler The function to handle the event. The function must accept a single parameter, which is an object literal. The type property on the parameter will match the eventType parameter passed to addHandlerAsync.
@@ -8303,9 +8266,9 @@ declare namespace Office {
         *
         * @remarks
         *
-        * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+        * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
         *
-        * Applicable Outlook mode: Appointment Attendee
+        * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
         *
         * @param callback When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult.
         * @param userContext Optional. Developers can provide any object they wish to access in the callback function. This object can be accessed by the asyncResult.asyncContext property in the callback function.
@@ -8321,9 +8284,9 @@ declare namespace Office {
         *
         * @remarks
         *
-        * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+        * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
         *
-        * Applicable Outlook mode: Appointment Attendee
+        * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
         * 
         * In addition to this signature, the method also has the following signature:
         * 
@@ -8348,9 +8311,9 @@ declare namespace Office {
         *
         * @remarks
         *
-        * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+        * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
         *
-        * Applicable Outlook mode: Appointment Attendee
+        * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
         * 
         * @param eventType The event that should invoke the handler.
         * @param handler The function to handle the event. The function must accept a single parameter, which is an object literal. The type property on the parameter will match the eventType parameter passed to removeHandlerAsync.
@@ -8366,19 +8329,18 @@ declare namespace Office {
          * [Api set: Mailbox 1.0]
          *
          * @remarks
+         * 
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
+         *
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          *
          * Note: Certain types of files are blocked by Outlook due to potential security issues and are therefore not returned. For more information, see {@link https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519 | Blocked attachments in Outlook}.
-         *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
-         *
-         * Applicable Outlook mode: Appointment Attendee
          *
          */
         attachments: AttachmentDetails[];
         /**
          * Gets the Exchange Web Services item class of the selected item.
          *
-
          *
          * You can create custom message classes that extends a default message class, for example, a custom appointment message class IPM.Appointment.Contoso.
          *
@@ -8386,9 +8348,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          * 
          * The itemClass property specifies the message class of the selected item. The following are the default message classes for the message or appointment item.
          * 
@@ -8410,9 +8372,6 @@ declare namespace Office {
          *   </tr>
          * </table>
          * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
-         *
-         * Applicable Outlook mode: Message Read
          */
         itemClass: string;
         
@@ -8427,9 +8386,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          */
         itemId: string;
         /**
@@ -8441,9 +8400,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          */
         normalizedSubject: string;
         /**
@@ -8457,9 +8416,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          */
         subject: string;
         /**
@@ -8476,9 +8435,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.0]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          *
          * @param formData A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB
          *  OR
@@ -8500,9 +8459,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          *
          * @param formData A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.
          * OR
@@ -8518,9 +8477,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signature:
          * 
@@ -8542,9 +8501,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          * 
          * @param callback Optional. When the method completes, the function passed in the callback parameter is called with a single parameter, asyncResult, which is an AsyncResult object. On success, the initialization data is provided in the asyncResult.value property as a string. If there is no initialization context, the asyncResult object will contain an Error object with its code property set to 9020 and its name property set to GenericResponseError.
          *
@@ -8560,9 +8519,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          */
         getEntities(): Entities;
         /**
@@ -8578,9 +8537,9 @@ declare namespace Office {
          * If the value passed in entityType is not a valid member of the EntityType enumeration, the method returns null. If no entities of the specified type are present on the item, the method returns an empty array. Otherwise, the type of the objects in the returned array depends on the type of entity requested in the entityType parameter.
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: Restricted
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>Restricted</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          * 
          * While the minimum permission level to use this method is Restricted, some entity types require ReadItem to access, as specified in the following table.
          * 
@@ -8639,9 +8598,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          *
          * @param name The name of the ItemHasKnownEntity rule element that defines the filter to match.
          * @returns If there is no ItemHasKnownEntity element in the manifest with a FilterName element value that matches the name parameter, the method returns null. If the name parameter does match an ItemHasKnownEntity element in the manifest, but there are no entities in the current item that match, the method return an empty array.
@@ -8663,9 +8622,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          */
         getRegExMatches(): any;
         /**
@@ -8684,9 +8643,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          *
          * @param name The name of the ItemHasRegularExpressionMatch rule element that defines the filter to match.
          */
@@ -8700,9 +8659,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          *
          * @param name The name of the ItemHasRegularExpressionMatch rule element that defines the filter to match.
          */
@@ -8723,9 +8682,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Appointment Attendee
+         * <tr><td>Applicable Outlook mode</td><td>Appointment Attendee</td></tr></table>
          */
         getSelectedRegExMatches(): any;
     }
@@ -8736,9 +8695,9 @@ declare namespace Office {
      * [Api set: Mailbox 1.0]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: Restricted
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>Restricted</td></tr>
      *
-     * Applicable Outlook mode: Compose or read
+     * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
      */
     interface AppointmentForm {
         /**
@@ -8748,9 +8707,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         body: string;
         /**
@@ -8772,9 +8731,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         end: Date;
         /**
@@ -8792,8 +8751,8 @@ declare namespace Office {
         *
         * @remarks
         *
-        * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
-        * Applicable Outlook mode: Compose or read
+        * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
+        * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
         */
         location: string;
         /**
@@ -8811,9 +8770,9 @@ declare namespace Office {
         *
         * @remarks
         *
-        * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+        * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
         *
-        * Applicable Outlook mode: Compose or read
+        * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
         */
        optionalAttendees: string[] | EmailAddressDetails[];
        resources: string[];
@@ -8832,9 +8791,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         requiredAttendees: string[] | EmailAddressDetails[];
         /**
@@ -8856,9 +8815,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         start: Date;
         /**
@@ -8878,9 +8837,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         subject: string;
     }
@@ -8891,9 +8850,9 @@ declare namespace Office {
      * [Api set: Mailbox 1.0]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: Restricted
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>Restricted</td></tr>
      *
-     * Applicable Outlook mode: Compose or read
+     * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
      */
     interface Item {
         /**
@@ -8903,9 +8862,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         body: Body;
         /**
@@ -8915,9 +8874,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Read
+         * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
          */
         dateTimeCreated: Date;
         /**
@@ -8927,11 +8886,11 @@ declare namespace Office {
          *
          * @remarks
          *
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
+         *
+         * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
+         *
          * Note: This member is not supported in Outlook for iOS or Outlook for Android.
-         *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
-         *
-         * Applicable Outlook mode: Read
          */
         dateTimeModifed: Date;
         /**
@@ -8943,9 +8902,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         itemType: Office.MailboxEnums.ItemType;
         /**
@@ -8955,9 +8914,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         notificationMessages: NotificationMessages;
 
@@ -8974,9 +8933,9 @@ declare namespace Office {
          * 
          * @remarks
          * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          * 
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          * 
          * @beta
          */
@@ -8995,9 +8954,9 @@ declare namespace Office {
          * 
          * @remarks
          * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          * 
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          * 
          * @beta
          */
@@ -9012,9 +8971,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signature:
          * 
@@ -9039,9 +8998,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          * 
          * @param eventType The event that should invoke the handler.
          * @param handler The function to handle the event. The function must accept a single parameter, which is an object literal. The type property on the parameter will match the eventType parameter passed to addHandlerAsync.
@@ -9062,9 +9021,9 @@ declare namespace Office {
         *
         * @remarks
         *
-        * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+        * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
         *
-        * Applicable Outlook mode: Compose or read
+        * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
         *
         * @param callback When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult.
         * @param userContext Optional. Developers can provide any object they wish to access in the callback function. This object can be accessed by the asyncResult.asyncContext property in the callback function.
@@ -9080,9 +9039,9 @@ declare namespace Office {
         *
         * @remarks
         *
-        * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+        * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
         *
-        * Applicable Outlook mode: Compose or read
+        * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
         * 
         * In addition to this signature, the method also has the following signature:
         * 
@@ -9107,9 +9066,9 @@ declare namespace Office {
         *
         * @remarks
         *
-        * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+        * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
         *
-        * Applicable Outlook mode: Compose or read
+        * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
         * 
         * @param eventType The event that should invoke the handler.
         * @param handler The function to handle the event. The function must accept a single parameter, which is an object literal. The type property on the parameter will match the eventType parameter passed to removeHandlerAsync.
@@ -9136,9 +9095,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         subject: Subject;
         /**
@@ -9151,17 +9110,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors:
-         *
-         * AttachmentSizeExceeded - The attachment is larger than allowed.
-         *
-         * FileTypeNotSupported - The attachment has an extension that is not allowed.
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>AttachmentSizeExceeded - The attachment is larger than allowed.</td></tr><td></td><td>FileTypeNotSupported - The attachment has an extension that is not allowed.</td></tr><td></td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signatures:
          * 
@@ -9189,17 +9142,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors:
-         *
-         * AttachmentSizeExceeded - The attachment is larger than allowed.
-         *
-         * FileTypeNotSupported - The attachment has an extension that is not allowed.
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>AttachmentSizeExceeded - The attachment is larger than allowed.</td></tr><tr><td></td><td>FileTypeNotSupported - The attachment has an extension that is not allowed.</td></tr><tr><td></td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          *
          * @param uri The URI that provides the location of the file to attach to the message or appointment. The maximum length is 2048 characters.
          * @param attachmentName The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.
@@ -9215,17 +9162,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors:
-         *
-         * AttachmentSizeExceeded - The attachment is larger than allowed.
-         *
-         * FileTypeNotSupported - The attachment has an extension that is not allowed.
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>AttachmentSizeExceeded - The attachment is larger than allowed.</td></tr><tr><td></td><td>FileTypeNotSupported - The attachment has an extension that is not allowed.</td></tr><tr><td></td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          *
          * @param uri The URI that provides the location of the file to attach to the message or appointment. The maximum length is 2048 characters.
          * @param attachmentName The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.
@@ -9244,17 +9185,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors:
-         *
-         * AttachmentSizeExceeded - The attachment is larger than allowed.
-         *
-         * FileTypeNotSupported - The attachment has an extension that is not allowed.
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>AttachmentSizeExceeded - The attachment is larger than allowed.</td></tr><tr><td></td><td>FileTypeNotSupported - The attachment has an extension that is not allowed.</td></tr><tr><td></td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          *
          * @param uri The URI that provides the location of the file to attach to the message or appointment. The maximum length is 2048 characters.
          * @param attachmentName The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.
@@ -9274,13 +9209,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors:
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          * 
          * In addition to the main signature, this method also has these signatures:
          * 
@@ -9309,13 +9242,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors:
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          *
          * @param itemId The Exchange identifier of the item to attach. The maximum length is 100 characters.
          * @param attachmentName The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.
@@ -9333,13 +9264,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors:
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          *
          * @param itemId The Exchange identifier of the item to attach. The maximum length is 100 characters.
          * @param attachmentName The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.
@@ -9359,13 +9288,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors:
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          *
          * @param itemId The Exchange identifier of the item to attach. The maximum length is 100 characters.
          * @param attachmentName The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.
@@ -9386,9 +9313,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: Restricted
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>Restricted</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr></table>
          */
         close(): void;
         /**
@@ -9400,11 +9327,11 @@ declare namespace Office {
          *
          * @remarks
          *
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
+         *
+         * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
+         *
          * More information on {@link https://docs.microsoft.com/outlook/actionable-messages/invoke-add-in-from-actionable-message | actionable messages}.
-         *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
-         *
-         * Applicable Outlook mode: Read
          *
          * @param options Optional. An object literal that contains one or more of the following properties.
          *        asyncContext: Developers can provide any object they wish to access in the callback method.
@@ -9427,9 +9354,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr></table>
          *
          * @param coercionType Requests a format for the data. If Text, the method returns the plain text as a string , removing any HTML tags present. If HTML, the method returns the selected text, whether it is plaintext or HTML.
          * @param callback When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult.
@@ -9449,9 +9376,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr></table>
          *
          * @param coercionType Requests a format for the data. If Text, the method returns the plain text as a string , removing any HTML tags present. If HTML, the method returns the selected text, whether it is plaintext or HTML.
          * @param options An object literal that contains one or more of the following properties.
@@ -9468,11 +9395,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signatures:
          * 
@@ -9497,11 +9424,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param attachmentIndex The identifier of the attachment to remove. The maximum length of the string is 100 characters.
          */
@@ -9515,11 +9442,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param attachmentIndex The identifier of the attachment to remove. The maximum length of the string is 100 characters.
          * @param options Optional. An object literal that contains one or more of the following properties.
@@ -9535,11 +9462,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param attachmentIndex The identifier of the attachment to remove. The maximum length of the string is 100 characters.
          * @param callback Optional. When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult. If removing the attachment fails, the asyncResult.error property will contain an error code with the reason for the failure.
@@ -9565,11 +9492,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signatures:
          * 
@@ -9603,11 +9530,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          */
         saveAsync(): void;
@@ -9630,11 +9557,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param options Optional. An object literal that contains one or more of the following properties.
          *        asyncContext: Developers can provide any object they wish to access in the callback method.
@@ -9659,11 +9586,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param callback Optional. When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult. If removing the attachment fails, the asyncResult.error property will contain an error code with the reason for the failure.
          */
@@ -9677,11 +9604,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signatures:
          * 
@@ -9707,11 +9634,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param data The data to be inserted. Data is not to exceed 1,000,000 characters. If more than 1,000,000 characters are passed in, an ArgumentOutOfRange exception is thrown.
          */
@@ -9725,11 +9652,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param data The data to be inserted. Data is not to exceed 1,000,000 characters. If more than 1,000,000 characters are passed in, an ArgumentOutOfRange exception is thrown.
          * @param options Optional. An object literal that contains one or more of the following properties.
@@ -9746,11 +9673,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param data The data to be inserted. Data is not to exceed 1,000,000 characters. If more than 1,000,000 characters are passed in, an ArgumentOutOfRange exception is thrown.
          * @param callback Optional. When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult. If removing the attachment fails, the asyncResult.error property will contain an error code with the reason for the failure.
@@ -9769,12 +9696,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.0]
          *
          * @remarks
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
+         *
+         * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
          *
          * Note: Certain types of files are blocked by Outlook due to potential security issues and are therefore not returned. For more information, see {@link https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519 | Blocked attachments in Outlook}.
-         *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
-         *
-         * Applicable Outlook mode: Read
          *
          */
         attachments: AttachmentDetails[];
@@ -9788,9 +9714,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Read
+         * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
          * 
          * The itemClass property specifies the message class of the selected item. The following are the default message classes for the message or appointment item.
          * 
@@ -9824,9 +9750,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Read
+         * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
          */
         itemId: string;
         /**
@@ -9838,9 +9764,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Read
+         * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
          */
         normalizedSubject: string;
         /**
@@ -9854,9 +9780,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         subject: string;
         /**
@@ -9873,9 +9799,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.0]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Read
+         * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
          *
          * @param formData A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB
          *  OR
@@ -9897,9 +9823,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Read
+         * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
          *
          * @param formData A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.
          * OR
@@ -9915,9 +9841,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Read
+         * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signature:
          * 
@@ -9939,9 +9865,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Read
+         * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
          * 
          * @param callback Optional. When the method completes, the function passed in the callback parameter is called with a single parameter, asyncResult, which is an AsyncResult object. On success, the initialization data is provided in the asyncResult.value property as a string. If there is no initialization context, the asyncResult object will contain an Error object with its code property set to 9020 and its name property set to GenericResponseError.
          *
@@ -9957,9 +9883,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Read
+         * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
          */
         getEntities(): Entities;
         /**
@@ -9975,9 +9901,9 @@ declare namespace Office {
          * If the value passed in entityType is not a valid member of the EntityType enumeration, the method returns null. If no entities of the specified type are present on the item, the method returns an empty array. Otherwise, the type of the objects in the returned array depends on the type of entity requested in the entityType parameter.
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: Restricted
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>Restricted</td></tr>
          *
-         * Applicable Outlook mode: Read
+         * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
          * 
          * While the minimum permission level to use this method is Restricted, some entity types require ReadItem to access, as specified in the following table.
          * 
@@ -10036,9 +9962,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Read
+         * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
          *
          * @param name The name of the ItemHasKnownEntity rule element that defines the filter to match.
          * @returns If there is no ItemHasKnownEntity element in the manifest with a FilterName element value that matches the name parameter, the method returns null. If the name parameter does match an ItemHasKnownEntity element in the manifest, but there are no entities in the current item that match, the method return an empty array.
@@ -10060,9 +9986,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Read
+         * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
          */
         getRegExMatches(): any;
         /**
@@ -10081,9 +10007,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Read
+         * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
          *
          * @param name The name of the ItemHasRegularExpressionMatch rule element that defines the filter to match.
          */
@@ -10097,9 +10023,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Read
+         * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
          *
          * @param name The name of the ItemHasRegularExpressionMatch rule element that defines the filter to match.
          */
@@ -10120,9 +10046,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Read
+         * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
          */
         getSelectedRegExMatches(): any;
     }
@@ -10143,9 +10069,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         conversationId: string;
     }
@@ -10163,9 +10089,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr></table>
          */
         bcc: Recipients;
         /**
@@ -10177,9 +10103,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr></table>
          */
         cc: Recipients;
         /**
@@ -10193,9 +10119,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr></table>
          *
          * @beta
          */
@@ -10209,9 +10135,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr></table>
          */
         to: Recipients;
 
@@ -10224,9 +10150,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr></table>
          */
         body: Body;
         /**
@@ -10236,9 +10162,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr></table>
          */
         dateTimeCreated: Date;
         /**
@@ -10248,11 +10174,11 @@ declare namespace Office {
          *
          * @remarks
          *
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
+         *
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr></table>
+         *
          * Note: This member is not supported in Outlook for iOS or Outlook for Android.
-         *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
-         *
-         * Applicable Outlook mode: Message Compose
          */
         dateTimeModifed: Date;
         /**
@@ -10264,9 +10190,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr></table>
          */
         itemType: Office.MailboxEnums.ItemType;
         /**
@@ -10276,9 +10202,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr></table>
          */
         notificationMessages: NotificationMessages;
 
@@ -10295,9 +10221,9 @@ declare namespace Office {
          * 
          * @remarks
          * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          * 
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr></table>
          * 
          * @beta
          */
@@ -10316,9 +10242,9 @@ declare namespace Office {
          * 
          * @remarks
          * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          * 
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr></table>
          * 
          * @beta
          */
@@ -10333,9 +10259,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signature:
          * 
@@ -10360,9 +10286,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr></table>
          * 
          * @param eventType The event that should invoke the handler.
          * @param handler The function to handle the event. The function must accept a single parameter, which is an object literal. The type property on the parameter will match the eventType parameter passed to addHandlerAsync.
@@ -10383,9 +10309,9 @@ declare namespace Office {
         *
         * @remarks
         *
-        * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+        * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
         *
-        * Applicable Outlook mode: Message Compose
+        * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr></table>
         *
         * @param callback When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult.
         * @param userContext Optional. Developers can provide any object they wish to access in the callback function. This object can be accessed by the asyncResult.asyncContext property in the callback function.
@@ -10401,9 +10327,9 @@ declare namespace Office {
         *
         * @remarks
         *
-        * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+        * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
         *
-        * Applicable Outlook mode: Message Compose
+        * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr></table>
         * 
         * In addition to this signature, the method also has the following signature:
         * 
@@ -10428,9 +10354,9 @@ declare namespace Office {
         *
         * @remarks
         *
-        * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+        * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
         *
-        * Applicable Outlook mode: Message Compose
+        * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr></table>
         * 
         * @param eventType The event that should invoke the handler.
         * @param handler The function to handle the event. The function must accept a single parameter, which is an object literal. The type property on the parameter will match the eventType parameter passed to removeHandlerAsync.
@@ -10451,9 +10377,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr></table>
          */
         subject: Subject;
         /**
@@ -10466,17 +10392,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr>
          *
-         * Errors:
-         *
-         * AttachmentSizeExceeded - The attachment is larger than allowed.
-         *
-         * FileTypeNotSupported - The attachment has an extension that is not allowed.
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>AttachmentSizeExceeded - The attachment is larger than allowed.</td></tr><tr><td></td><td>FileTypeNotSupported - The attachment has an extension that is not allowed.</td></tr><tr><td></td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signatures:
          * 
@@ -10504,17 +10424,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr>
          *
-         * Errors:
-         *
-         * AttachmentSizeExceeded - The attachment is larger than allowed.
-         *
-         * FileTypeNotSupported - The attachment has an extension that is not allowed.
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>AttachmentSizeExceeded - The attachment is larger than allowed.</td></tr><tr><td></td><td>FileTypeNotSupported - The attachment has an extension that is not allowed.</td></tr><tr><td></td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          *
          * @param uri The URI that provides the location of the file to attach to the message or appointment. The maximum length is 2048 characters.
          * @param attachmentName The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.
@@ -10530,17 +10444,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr>
          *
-         * Errors:
-         *
-         * AttachmentSizeExceeded - The attachment is larger than allowed.
-         *
-         * FileTypeNotSupported - The attachment has an extension that is not allowed.
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>AttachmentSizeExceeded - The attachment is larger than allowed.</td></tr><tr><td></td><td>FileTypeNotSupported - The attachment has an extension that is not allowed.</td></tr><tr><td></td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          *
          * @param uri The URI that provides the location of the file to attach to the message or appointment. The maximum length is 2048 characters.
          * @param attachmentName The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.
@@ -10559,17 +10467,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr>
          *
-         * Errors:
-         *
-         * AttachmentSizeExceeded - The attachment is larger than allowed.
-         *
-         * FileTypeNotSupported - The attachment has an extension that is not allowed.
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>AttachmentSizeExceeded - The attachment is larger than allowed.</td></tr><tr><td></td><td>FileTypeNotSupported - The attachment has an extension that is not allowed.</td></tr><tr><td></td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          *
          * @param uri The URI that provides the location of the file to attach to the message or appointment. The maximum length is 2048 characters.
          * @param attachmentName The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.
@@ -10589,13 +10491,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr>
          *
-         * Errors:
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          * 
          * In addition to the main signature, this method also has these signatures:
          * 
@@ -10624,13 +10524,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr>
          *
-         * Errors:
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          *
          * @param itemId The Exchange identifier of the item to attach. The maximum length is 100 characters.
          * @param attachmentName The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.
@@ -10648,13 +10546,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr>
          *
-         * Errors:
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          *
          * @param itemId The Exchange identifier of the item to attach. The maximum length is 100 characters.
          * @param attachmentName The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.
@@ -10674,13 +10570,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr>
          *
-         * Errors:
-         *
-         * NumberOfAttachmentsExceeded - The message or appointment has too many attachments.
+         * <tr><td>Errors</td><td>NumberOfAttachmentsExceeded - The message or appointment has too many attachments.</td></tr></table>
          *
          * @param itemId The Exchange identifier of the item to attach. The maximum length is 100 characters.
          * @param attachmentName The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.
@@ -10701,9 +10595,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: Restricted
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>Restricted</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr></table>
          */
         close(): void;
         /**
@@ -10715,11 +10609,11 @@ declare namespace Office {
          *
          * @remarks
          *
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
+         *
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr></table>
+         *
          * More information on {@link https://docs.microsoft.com/outlook/actionable-messages/invoke-add-in-from-actionable-message | actionable messages}.
-         *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
-         *
-         * Applicable Outlook mode: Message Compose
          *
          * @param options Optional. An object literal that contains one or more of the following properties.
          *        asyncContext: Developers can provide any object they wish to access in the callback method.
@@ -10742,9 +10636,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr></table>
          *
          * @param coercionType Requests a format for the data. If Text, the method returns the plain text as a string , removing any HTML tags present. If HTML, the method returns the selected text, whether it is plaintext or HTML.
          * @param callback When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult.
@@ -10764,9 +10658,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr></table>
          *
          * @param coercionType Requests a format for the data. If Text, the method returns the plain text as a string , removing any HTML tags present. If HTML, the method returns the selected text, whether it is plaintext or HTML.
          * @param options An object literal that contains one or more of the following properties.
@@ -10783,11 +10677,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signatures:
          * 
@@ -10812,11 +10706,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param attachmentIndex The identifier of the attachment to remove. The maximum length of the string is 100 characters.
          */
@@ -10830,11 +10724,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param attachmentIndex The identifier of the attachment to remove. The maximum length of the string is 100 characters.
          * @param options Optional. An object literal that contains one or more of the following properties.
@@ -10850,11 +10744,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param attachmentIndex The identifier of the attachment to remove. The maximum length of the string is 100 characters.
          * @param callback Optional. When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult. If removing the attachment fails, the asyncResult.error property will contain an error code with the reason for the failure.
@@ -10880,11 +10774,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signatures:
          * 
@@ -10918,11 +10812,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          */
         saveAsync(): void;
@@ -10945,11 +10839,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param options Optional. An object literal that contains one or more of the following properties.
          *        asyncContext: Developers can provide any object they wish to access in the callback method.
@@ -10974,11 +10868,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param callback Optional. When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult. If removing the attachment fails, the asyncResult.error property will contain an error code with the reason for the failure.
          */
@@ -10992,11 +10886,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signatures:
          * 
@@ -11022,11 +10916,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param data The data to be inserted. Data is not to exceed 1,000,000 characters. If more than 1,000,000 characters are passed in, an ArgumentOutOfRange exception is thrown.
          */
@@ -11040,11 +10934,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param data The data to be inserted. Data is not to exceed 1,000,000 characters. If more than 1,000,000 characters are passed in, an ArgumentOutOfRange exception is thrown.
          * @param options Optional. An object literal that contains one or more of the following properties.
@@ -11061,11 +10955,11 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Message Compose
+         * <tr><td>Applicable Outlook mode</td><td>Message Compose</td></tr>
          *
-         * Errors: InvalidAttachmentId - The attachment identifier does not exist.
+         * <tr><td>Errors</td><td>InvalidAttachmentId - The attachment identifier does not exist.</td></tr></table>
          *
          * @param data The data to be inserted. Data is not to exceed 1,000,000 characters. If more than 1,000,000 characters are passed in, an ArgumentOutOfRange exception is thrown.
          * @param callback Optional. When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult. If removing the attachment fails, the asyncResult.error property will contain an error code with the reason for the failure.
@@ -11087,9 +10981,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          */
         cc: EmailAddressDetails[];
         /**
@@ -11105,9 +10999,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          */
         from: EmailAddressDetails;
         /**
@@ -11117,9 +11011,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          */
         internetMessageId: string;
         /**
@@ -11133,9 +11027,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          */
         sender: EmailAddressDetails;
         /**
@@ -11147,9 +11041,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          */
         to: EmailAddressDetails[];
 
@@ -11162,9 +11056,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          */
         body: Body;
         /**
@@ -11174,9 +11068,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          */
         dateTimeCreated: Date;
         /**
@@ -11186,11 +11080,11 @@ declare namespace Office {
          *
          * @remarks
          *
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
+         *
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
+         *
          * Note: This member is not supported in Outlook for iOS or Outlook for Android.
-         *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
-         *
-         * Applicable Outlook mode: Message Read
          */
         dateTimeModifed: Date;
         /**
@@ -11202,9 +11096,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          */
         itemType: Office.MailboxEnums.ItemType;
         /**
@@ -11214,9 +11108,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         notificationMessages: NotificationMessages;
 
@@ -11233,9 +11127,9 @@ declare namespace Office {
          * 
          * @remarks
          * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          * 
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          * 
          * @beta
          */
@@ -11254,9 +11148,9 @@ declare namespace Office {
          * 
          * @remarks
          * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          * 
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          * 
          * @beta
          */
@@ -11271,9 +11165,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signature:
          * 
@@ -11298,9 +11192,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          * 
          * @param eventType The event that should invoke the handler.
          * @param handler The function to handle the event. The function must accept a single parameter, which is an object literal. The type property on the parameter will match the eventType parameter passed to addHandlerAsync.
@@ -11321,9 +11215,9 @@ declare namespace Office {
         *
         * @remarks
         *
-        * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+        * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
         *
-        * Applicable Outlook mode: Message Read
+        * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
         *
         * @param callback When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult.
         * @param userContext Optional. Developers can provide any object they wish to access in the callback function. This object can be accessed by the asyncResult.asyncContext property in the callback function.
@@ -11339,9 +11233,9 @@ declare namespace Office {
         *
         * @remarks
         *
-        * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+        * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
         *
-        * Applicable Outlook mode: Message Read
+        * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
         * 
         * In addition to this signature, the method also has the following signature:
         * 
@@ -11366,9 +11260,9 @@ declare namespace Office {
         *
         * @remarks
         *
-        * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+        * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
         *
-        * Applicable Outlook mode: Message Read
+        * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
         * 
         * @param eventType The event that should invoke the handler.
         * @param handler The function to handle the event. The function must accept a single parameter, which is an object literal. The type property on the parameter will match the eventType parameter passed to removeHandlerAsync.
@@ -11385,11 +11279,11 @@ declare namespace Office {
          *
          * @remarks
          *
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
+         *
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
+         * 
          * Note: Certain types of files are blocked by Outlook due to potential security issues and are therefore not returned. For more information, see {@link https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519 | Blocked attachments in Outlook}.
-         *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
-         *
-         * Applicable Outlook mode: Message Read
          *
          */
         attachments: AttachmentDetails[];
@@ -11402,6 +11296,10 @@ declare namespace Office {
          *
          * @remarks
          * 
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
+         *
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
+		 
          * The itemClass property specifies the message class of the selected item. The following are the default message classes for the message or appointment item.
          * 
          * <table>
@@ -11422,9 +11320,6 @@ declare namespace Office {
          *   </tr>
          * </table>
          * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
-         *
-         * Applicable Outlook mode: Message Read
          */
         itemClass: string;
         /**
@@ -11438,9 +11333,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          */
         itemId: string;
         /**
@@ -11452,9 +11347,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          */
         normalizedSubject: string;
         /**
@@ -11468,9 +11363,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          */
         subject: string;
         /**
@@ -11487,9 +11382,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.0]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          *
          * @param formData A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB
          *  OR
@@ -11511,9 +11406,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          *
          * @param formData A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.
          * OR
@@ -11529,9 +11424,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signature:
          * 
@@ -11553,9 +11448,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          * 
          * @param callback Optional. When the method completes, the function passed in the callback parameter is called with a single parameter, asyncResult, which is an AsyncResult object. On success, the initialization data is provided in the asyncResult.value property as a string. If there is no initialization context, the asyncResult object will contain an Error object with its code property set to 9020 and its name property set to GenericResponseError.
          *
@@ -11571,9 +11466,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          */
         getEntities(): Entities;
         /**
@@ -11589,6 +11484,10 @@ declare namespace Office {
          * If the value passed in entityType is not a valid member of the EntityType enumeration, the method returns null. If no entities of the specified type are present on the item, the method returns an empty array. Otherwise, the type of the objects in the returned array depends on the type of entity requested in the entityType parameter.
          *
          * @remarks
+         * 
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>Restricted</td></tr>
+         *
+         * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
          * 
          * While the minimum permission level to use this method is Restricted, some entity types require ReadItem to access, as specified in the following table.
          * 
@@ -11634,10 +11533,6 @@ declare namespace Office {
          *     <td>Restricted</td>
          *   </tr>
          * </table>
-         * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: Restricted
-         *
-         * Applicable Outlook mode: Read
          */
         getEntitiesByType(entityType: Office.MailboxEnums.EntityType): (string | Contact | MeetingSuggestion | PhoneNumber | TaskSuggestion)[];
         /**
@@ -11651,9 +11546,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          *
          * @param name The name of the ItemHasKnownEntity rule element that defines the filter to match.
          * @returns If there is no ItemHasKnownEntity element in the manifest with a FilterName element value that matches the name parameter, the method returns null. If the name parameter does match an ItemHasKnownEntity element in the manifest, but there are no entities in the current item that match, the method return an empty array.
@@ -11675,9 +11570,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          */
         getRegExMatches(): any;
         /**
@@ -11696,9 +11591,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          *
          * @param name The name of the ItemHasRegularExpressionMatch rule element that defines the filter to match.
          */
@@ -11712,9 +11607,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          *
          * @param name The name of the ItemHasRegularExpressionMatch rule element that defines the filter to match.
          */
@@ -11735,9 +11630,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Message Read
+         * <tr><td>Applicable Outlook mode</td><td>Message Read</td></tr></table>
          */
         getSelectedRegExMatches(): any;
     }
@@ -11749,9 +11644,9 @@ declare namespace Office {
      *
      * @remarks
      *
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
      *
-     * Applicable Outlook mode: Read
+     * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
      */
     interface LocalClientTime {
         /**
@@ -11793,9 +11688,9 @@ declare namespace Office {
      * [Api set: Mailbox 1.1]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
      *
-     * Applicable Outlook mode: Compose
+     * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr></table>
      */
     interface Location {
         /**
@@ -11810,9 +11705,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signature:
          * 
@@ -11830,9 +11725,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr></table>
          */
         getAsync(callback: (result: AsyncResult) => void): void;
         /**
@@ -11848,11 +11743,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: DataExceedsMaximumSize - The location parameter is longer than 255 characters.
+         * <tr><td>Errors</td><td>DataExceedsMaximumSize - The location parameter is longer than 255 characters.</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signatures:
          * 
@@ -11873,11 +11768,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: DataExceedsMaximumSize - The location parameter is longer than 255 characters.
+         * <tr><td>Errors</td><td>DataExceedsMaximumSize - The location parameter is longer than 255 characters.</td></tr></table>
          */
         setAsync(location: string): void;
         /**
@@ -11892,11 +11787,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: DataExceedsMaximumSize - The location parameter is longer than 255 characters.
+         * <tr><td>Errors</td><td>DataExceedsMaximumSize - The location parameter is longer than 255 characters.</td></tr></table>
          */
         setAsync(location: string, options: AsyncContextOptions): void;
         /**
@@ -11910,11 +11805,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: DataExceedsMaximumSize - The location parameter is longer than 255 characters.
+         * <tr><td>Errors</td><td>DataExceedsMaximumSize - The location parameter is longer than 255 characters.</td></tr></table>
          */
         setAsync(location: string, callback: (result: AsyncResult) => void): void;
     }
@@ -11932,9 +11827,9 @@ declare namespace Office {
      * [Api set: Mailbox 1.0]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: Restricted
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>Restricted</td></tr>
      *
-     * Applicable Outlook mode: Compose or read
+     * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
      */
     interface Mailbox {
         /**
@@ -11953,9 +11848,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.0]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         diagnostics: Diagnostics;
         /**
@@ -11965,17 +11860,17 @@ declare namespace Office {
          *
          * In compose mode you must call the saveAsync method before you can use the ewsUrl member. Your app must have ReadWriteItem permissions to call the saveAsync method.
          *
-         * Note: This member is not supported in Outlook for iOS or Outlook for Android.
-         *
          * [Api set: Mailbox 1.0]
          *
          * @remarks
          *
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
+         *
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
+         *
          * The ewsUrl value can be used by a remote service to make EWS calls to the user's mailbox. For example, you can create a remote service to {@link https://msdn.microsoft.com/library/office/dn148008.aspx | get attachments from the selected item}.
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
-         *
-         * Applicable Outlook mode: Compose or read
+         * Note: This member is not supported in Outlook for iOS or Outlook for Android.
          */
         ewsUrl: string;
         /**
@@ -11995,11 +11890,11 @@ declare namespace Office {
          *
          * @remarks
          *
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
+         *
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
+         *
          * The restUrl value can be used to make {@link https://docs.microsoft.com/outlook/rest/ | REST API} calls to the user's mailbox.
-         *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
-         *
-         * Applicable Outlook mode: Compose or read
          */
         restUrl: string;
         /**
@@ -12017,9 +11912,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          *
          * @param eventType The event that should invoke the handler.
          * @param handler The function to handle the event. The function must accept a single parameter, which is an object literal. The type property on the parameter will match the eventType parameter passed to addHandlerAsync.
@@ -12038,9 +11933,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: Restricted
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>Restricted</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          *
          * @param itemId An item ID formatted for the Outlook REST APIs.
          * @param restVersion A value indicating the version of the Outlook REST API used to retrieve the item ID.
@@ -12057,9 +11952,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          *
          * @param timeValue A Date object.
          */
@@ -12072,12 +11967,12 @@ declare namespace Office {
          * [Api set: Mailbox 1.3]
          *
          * @remarks
+         * 
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>Restricted</td></tr>
+         *
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          *
          * Item IDs retrieved via EWS or via the itemId property use a different format than the format used by REST APIs (such as the {@link https://msdn.microsoft.com/office/office365/APi/mail-rest-operations | Outlook Mail API} or the {@link http://graph.microsoft.io/ | Microsoft Graph}. The convertToRestId method converts an EWS-formatted ID into the proper format for REST.
-         *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: Restricted
-         *
-         * Applicable Outlook mode: Compose or read
          *
          * @param itemId An item ID formatted for Exchange Web Services (EWS)
          * @param restVersion A value indicating the version of the Outlook REST API that the converted ID will be used with.
@@ -12092,9 +11987,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          *
          * @param input The local time value to convert.
          * @returns A Date object with the time expressed in UTC.
@@ -12117,9 +12012,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          *
          * @param itemId The Exchange Web Services (EWS) identifier for an existing calendar appointment.
          */
@@ -12141,9 +12036,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          *
          * @param itemId The Exchange Web Services (EWS) identifier for an existing message.
          */
@@ -12165,9 +12060,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Read
+         * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
          *
          * @param parameters An AppointmentForm describing the new appointment. All properties are optional.
          */
@@ -12183,9 +12078,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Read
+         * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
          *
          * @param parameters A dictionary containing all values to be filled in for the user in the new form. All parameters are optional.
          *        toRecipients: An array of strings containing the email addresses or an array containing an {@link Office.EmailAddressDetails} object for each of the recipients on the To line. The array is limited to a maximum of 100 entries.
@@ -12224,9 +12119,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose and read
+         * <tr><td>Applicable Outlook mode</td><td>Compose and read</td></tr></table>
          * 
          * In addition to this signature, the method has the following signatures:
          * 
@@ -12255,9 +12150,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose and read
+         * <tr><td>Applicable Outlook mode</td><td>Compose and read</td></tr></table>
          *
          * @param callback When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult. The token is provided as a string in the asyncResult.value property.
          */
@@ -12277,9 +12172,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose and read
+         * <tr><td>Applicable Outlook mode</td><td>Compose and read</td></tr></table>
          *
          * @param callback When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult. The token is provided as a string in the asyncResult.value property.
          * @param userContext Optional. Any state data that is passed to the asynchronous method.
@@ -12294,11 +12189,11 @@ declare namespace Office {
          *
          * @remarks
          *
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
+         *
+         * <tr><td>Applicable Outlook mode</td><td>Compose and read</td></tr></table>
+         *
          * The getUserIdentityTokenAsync method returns a token that you can use to identify and {@link https://msdn.microsoft.com/library/office/fp179828.aspx | authenticate the add-in and user with a third-party system}.
-         *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
-         *
-         * Applicable Outlook mode: Compose and read
          *
          * @param callback When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult.
          * @param userContext Optional. Any state data that is passed to the asynchronous method.|
@@ -12335,9 +12230,9 @@ declare namespace Office {
          *
          * @remarks
          *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteMailbox
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteMailbox</td></tr>
          *
-         * Applicable Outlook mode: Compose and read
+         * <tr><td>Applicable Outlook mode</td><td>Compose and read</td></tr></table>
          *
          * @param data The EWS request.
          * @param callback When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult.
@@ -12356,9 +12251,9 @@ declare namespace Office {
      * [Api set: Mailbox 1.0]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
      *
-     * Applicable Outlook mode: Read
+     * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
      */
     interface MeetingSuggestion {
         /**
@@ -12392,9 +12287,9 @@ declare namespace Office {
      * [Api set: Mailbox 1.3]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
      *
-     * Applicable Outlook mode: Compose or read
+     * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
      */
     interface NotificationMessageDetails {
         /**
@@ -12424,9 +12319,9 @@ declare namespace Office {
      * [Api set: Mailbox 1.3]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
      *
-     * Applicable Outlook mode: Compose or read
+     * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
      */
     interface NotificationMessages {
         /**
@@ -12443,9 +12338,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.3]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          * 
          * In addition to this signature, the method also has the following signatures:
          * 
@@ -12468,9 +12363,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.3]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         addAsync(key: string, JSONmessage: NotificationMessageDetails): void;
         /**
@@ -12486,9 +12381,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.3]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         addAsync(key: string, JSONmessage: NotificationMessageDetails, options: AsyncContextOptions): void;
         /**
@@ -12503,9 +12398,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.3]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         addAsync(key: string, JSONmessage: NotificationMessageDetails, callback: (result: AsyncResult) => void): void;
         /**
@@ -12514,9 +12409,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.3]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          * 
          * In addition to the main signature, this method also has this signature:
          * 
@@ -12533,9 +12428,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.3]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          *
          * @param callback Optional. When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult.
          */
@@ -12546,9 +12441,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.3]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          * 
          * In addition to the main signature, this method also has these signatures:
          * 
@@ -12570,9 +12465,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.3]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          *
          * @param key The key for the notification message to remove.
          */
@@ -12583,9 +12478,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.3]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          *
          * @param key The key for the notification message to remove.
          * @param options Optional. An object literal that contains one or more of the following properties.
@@ -12598,9 +12493,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.3]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          *
          * @param key The key for the notification message to remove.
          * @param callback Optional. When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult.
@@ -12614,9 +12509,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.3]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          * 
          * In addition to the main signature, this method also has these signatures:
          * 
@@ -12641,9 +12536,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.3]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          *
          * @param key The key for the notification message to replace. It can't be longer than 32 characters.
          * @param JSONmessage A JSON object that contains the new notification message to replace the existing message. It contains a NotificationMessageDetails object.
@@ -12657,9 +12552,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.3]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          *
          * @param key The key for the notification message to replace. It can't be longer than 32 characters.
          * @param JSONmessage A JSON object that contains the new notification message to replace the existing message. It contains a NotificationMessageDetails object.
@@ -12675,9 +12570,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.3]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          *
          * @param key The key for the notification message to replace. It can't be longer than 32 characters.
          * @param JSONmessage A JSON object that contains the new notification message to replace the existing message. It contains a NotificationMessageDetails object.
@@ -12693,9 +12588,9 @@ declare namespace Office {
      * [Api set: Mailbox 1.0]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
      *
-     * Applicable Outlook mode: Read
+     * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
      */
     interface PhoneNumber {
         /**
@@ -12715,9 +12610,9 @@ declare namespace Office {
      * [Api set: Mailbox 1.1]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
      *
-     * Applicable Outlook mode: Compose
+     * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr></table>
      */
     interface Recipients {
         /**
@@ -12734,11 +12629,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: NumberOfRecipientsExceeded - The number of recipients exceeded 100 entries.
+         * <tr><td>Errors</td><td>NumberOfRecipientsExceeded - The number of recipients exceeded 100 entries.</td></tr></table>
          * 
          * In addition to the main signature, this method also has these signatures:
          * 
@@ -12768,11 +12663,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: NumberOfRecipientsExceeded - The number of recipients exceeded 100 entries.
+         * <tr><td>Errors</td><td>NumberOfRecipientsExceeded - The number of recipients exceeded 100 entries.</td></tr></table>
          *
          * @param recipients The recipients to add to the recipients list.
          */
@@ -12791,11 +12686,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: NumberOfRecipientsExceeded - The number of recipients exceeded 100 entries.
+         * <tr><td>Errors</td><td>NumberOfRecipientsExceeded - The number of recipients exceeded 100 entries.</td></tr></table>
          *
          * @param recipients The recipients to add to the recipients list.
          * @param options Optional. An object literal that contains one or more of the following properties.
@@ -12816,11 +12711,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: NumberOfRecipientsExceeded - The number of recipients exceeded 100 entries.
+         * <tr><td>Errors</td><td>NumberOfRecipientsExceeded - The number of recipients exceeded 100 entries.</td></tr></table>
          *
          * @param recipients The recipients to add to the recipients list.
          * @param callback Optional. When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult. If adding the recipients fails, the asyncResult.error property will contain an error code.
@@ -12834,9 +12729,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr></table>
          * 
          * In addition to the main signature, this method also has this signature:
          * 
@@ -12855,9 +12750,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr></table>
          *
          * @param callback When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult.
          */
@@ -12878,11 +12773,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: NumberOfRecipientsExceeded - The number of recipients exceeded 100 entries.
+         * <tr><td>Errors</td><td>NumberOfRecipientsExceeded - The number of recipients exceeded 100 entries.</td></tr></table>
          * 
          * In addition to the main signature, this method also has these signatures:
          * 
@@ -12914,11 +12809,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: NumberOfRecipientsExceeded - The number of recipients exceeded 100 entries.
+         * <tr><td>Errors</td><td>NumberOfRecipientsExceeded - The number of recipients exceeded 100 entries.</td></tr></table>
          *
          * @param recipients The recipients to add to the recipients list.
          */
@@ -12939,11 +12834,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: NumberOfRecipientsExceeded - The number of recipients exceeded 100 entries.
+         * <tr><td>Errors</td><td>NumberOfRecipientsExceeded - The number of recipients exceeded 100 entries.</td></tr></table>
          *
          * @param recipients The recipients to add to the recipients list.
          * @param options Optional. An object literal that contains one or more of the following properties.
@@ -12966,11 +12861,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: NumberOfRecipientsExceeded - The number of recipients exceeded 100 entries.
+         * <tr><td>Errors</td><td>NumberOfRecipientsExceeded - The number of recipients exceeded 100 entries.</td></tr></table>
          *
          * @param recipients The recipients to add to the recipients list.
          * @param callback Optional. When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult.  If setting the recipients fails the asyncResult.error property will contain a code that indicates any error that occurred while adding the data.
@@ -12985,6 +12880,12 @@ declare namespace Office {
      * [Api set: Mailbox Preview]
      * 
      * @remarks
+     * 
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
+     * 
+     * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
+     * 
+     * **States**
      * 
      * <table>
      *   <tr>
@@ -13024,10 +12925,6 @@ declare namespace Office {
      *   </tr>
      * </table>
      * 
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
-     * 
-     * Applicable Outlook mode: Compose or read
-     * 
      * @beta
      */
     export interface Recurrence {
@@ -13038,9 +12935,9 @@ declare namespace Office {
          * 
          * @remarks
          * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          * 
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         recurrenceProperties: RecurrenceProperties;
         /**
@@ -13050,9 +12947,9 @@ declare namespace Office {
          * 
          * @remarks
          * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          * 
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         recurrenceTimeZone: MailboxEnums.RecurrenceTimeZone;
 
@@ -13063,9 +12960,9 @@ declare namespace Office {
          * 
          * @remarks
          * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          * 
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         recurrenceType: MailboxEnums.RecurrenceType;
 
@@ -13076,9 +12973,9 @@ declare namespace Office {
          * 
          * @remarks
          * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          * 
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         seriesTime: SeriesTime;
 
@@ -13091,9 +12988,9 @@ declare namespace Office {
          * 
          * @remarks
          * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          * 
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          * 
          * In addition to the main signature, this method also has this signature:
          * 
@@ -13114,9 +13011,9 @@ declare namespace Office {
          * 
          * @remarks
          * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          * 
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          * 
          * @param callback Optional. When the method completes, the function passed in the callback parameter is called with a single parameter, asyncResult, which is an AsyncResult object.
          */
@@ -13131,11 +13028,11 @@ declare namespace Office {
          * 
          * @remarks
          * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          * 
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          * 
-         * Errors: InvalidEndTime - The appointment end time is before its start time.
+         * <tr><td>Errors</td><td>InvalidEndTime - The appointment end time is before its start time.</td></tr></table>
          * 
          * In addition to the main signature, this method also has this signature:
          * 
@@ -13157,11 +13054,11 @@ declare namespace Office {
          * 
          * @remarks
          * 
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          * 
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          * 
-         * Errors: InvalidEndTime - The appointment end time is before its start time.
+         * <tr><td>Errors</td><td>InvalidEndTime - The appointment end time is before its start time.</td></tr></table>
          * 
          * @param recurrencePattern A recurrence object.
          * @param callback Optional. When the method completes, the function passed in the callback parameter is called with a single parameter, asyncResult, which is an AsyncResult object.
@@ -13176,9 +13073,9 @@ declare namespace Office {
      * 
      * @remarks
      * 
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
      * 
-     * Applicable Outlook mode: Compose or read
+     * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
      * 
      * @beta
      */
@@ -13270,9 +13167,9 @@ declare namespace Office {
      * [Api set: Mailbox 1.0]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: Restricted
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>Restricted</td></tr>
      *
-     * Applicable Outlook mode: Compose or read
+     * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
      */
     interface RoamingSettings {
         /**
@@ -13281,9 +13178,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.0]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: Restricted
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>Restricted</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          *
          * @param name The case-sensitive name of the setting to retrieve.
          * @returns Type: String | Number | Boolean | Object | Array
@@ -13295,9 +13192,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.0]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: Restricted
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>Restricted</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          *
          * @param name The case-sensitive name of the setting to remove.
          */
@@ -13310,9 +13207,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.0]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: Restricted
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>Restricted</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          *
          * @param callback Optional? When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult.
          */
@@ -13329,9 +13226,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.0]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: Restricted
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>Restricted</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          *
          * @param name The case-sensitive name of the setting to set or create.
          * @param value Specifies the value to be stored.
@@ -13345,9 +13242,9 @@ declare namespace Office {
      * [Api set: Mailbox Preview]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
      *
-     * Applicable Outlook mode: Compose or read
+     * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
      * 
      * @beta
      */
@@ -13358,9 +13255,9 @@ declare namespace Office {
          * [Api set: Mailbox Preview]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         getDuration(): number;
 
@@ -13370,9 +13267,9 @@ declare namespace Office {
          * [Api set: Mailbox Preview]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         getEndDate(): string;
 
@@ -13382,9 +13279,9 @@ declare namespace Office {
          * [Api set: Mailbox Preview]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         getEndTime(): string;
 
@@ -13394,9 +13291,9 @@ declare namespace Office {
          * [Api set: Mailbox Preview]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         getStartDate(): string;
 
@@ -13406,9 +13303,9 @@ declare namespace Office {
          * [Api set: Mailbox Preview]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         getStartTime(): string;
 
@@ -13418,9 +13315,9 @@ declare namespace Office {
          * [Api set: Mailbox Preview]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr></table>
          * 
          * @param minutes The length of the appointment in minutes.
          */
@@ -13432,11 +13329,11 @@ declare namespace Office {
          * [Api set: Mailbox Preview]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          * 
-         * Errors: Invalid date format - The date is not in an acceptable format.
+         * <tr><td>Errors</td><td>Invalid date format - The date is not in an acceptable format.</td></tr></table>
          * 
          * In addition to the main signature, this method also has this signature:
          * 
@@ -13453,11 +13350,11 @@ declare namespace Office {
          * [Api set: Mailbox Preview]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          * 
-         * Errors: Invalid date format - The date is not in an acceptable format.
+         * <tr><td>Errors</td><td>Invalid date format - The date is not in an acceptable format.</td></tr></table>
          * 
          * @param date End date of the recurring appointment series represented in the {@link https://www.iso.org/iso-8601-date-and-time-format.html | ISO 8601} date format: "YYYY-MM-DD".
          */
@@ -13468,11 +13365,11 @@ declare namespace Office {
          * [Api set: Mailbox Preview]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          * 
-         * Errors: Invalid date format - The date is not in an acceptable format.
+         * <tr><td>Errors</td><td>Invalid date format - The date is not in an acceptable format.</td></tr></table>
          * 
          * In addition to the main signature, this method also has this signature:
          * 
@@ -13490,11 +13387,11 @@ declare namespace Office {
          * [Api set: Mailbox Preview]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          * 
-         * Errors: Invalid date format - The date is not in an acceptable format.
+         * <tr><td>Errors</td><td>Invalid date format - The date is not in an acceptable format.</td></tr></table>
          * 
          * @param date Start date of the recurring appointment series represented in the {@link https://www.iso.org/iso-8601-date-and-time-format.html | ISO 8601} date format: "YYYY-MM-DD".
          */
@@ -13506,11 +13403,11 @@ declare namespace Office {
          * [Api set: Mailbox Preview]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          * 
-         * Errors: Invalid time format - The time is not in an acceptable format.
+         * <tr><td>Errors</td><td>Invalid time format - The time is not in an acceptable format.</td></tr></table>
          * 
          * In addition to the main signature, this method also has this signature:
          * 
@@ -13527,11 +13424,11 @@ declare namespace Office {
          * [Api set: Mailbox Preview]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          * 
-         * Errors: Invalid time format - The time is not in an acceptable format.
+         * <tr><td>Errors</td><td>Invalid time format - The time is not in an acceptable format.</td></tr></table>
          * 
          * @param time Start time of all instances represented by standard datetime string format: "THH:mm:ss:mmm".
          */
@@ -13544,9 +13441,9 @@ declare namespace Office {
      * [Api set: Mailbox 1.1]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
      *
-     * Applicable Outlook mode: Compose
+     * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr></table>
      */
     interface Subject {
         /**
@@ -13557,9 +13454,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr></table>
          * 
          * In addition to the main signature, this method also has this signature:
          * 
@@ -13577,9 +13474,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr></table>
          *
          * @param callback When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult.
          */
@@ -13592,11 +13489,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: DataExceedsMaximumSize - The subject parameter is longer than 255 characters.
+         * <tr><td>Errors</td><td>DataExceedsMaximumSize - The subject parameter is longer than 255 characters.</td></tr></table>
          * 
          * In addition to the main signature, this method also has these signatures:
          * 
@@ -13620,11 +13517,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: DataExceedsMaximumSize - The subject parameter is longer than 255 characters.
+         * <tr><td>Errors</td><td>DataExceedsMaximumSize - The subject parameter is longer than 255 characters.</td></tr></table>
          *
          * @param subject The subject of the appointment or message. The string is limited to 255 characters.
          */
@@ -13637,11 +13534,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: DataExceedsMaximumSize - The subject parameter is longer than 255 characters.
+         * <tr><td>Errors</td><td>DataExceedsMaximumSize - The subject parameter is longer than 255 characters.</td></tr></table>
          *
          * @param subject The subject of the appointment or message. The string is limited to 255 characters.
          * @param options An object literal that contains one or more of the following properties.
@@ -13656,11 +13553,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: DataExceedsMaximumSize - The subject parameter is longer than 255 characters.
+         * <tr><td>Errors</td><td>DataExceedsMaximumSize - The subject parameter is longer than 255 characters.</td></tr></table>
          *
          * @param subject The subject of the appointment or message. The string is limited to 255 characters.
          * @param callback When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult. If setting the subject fails, the asyncResult.error property will contain an error code.
@@ -13676,9 +13573,9 @@ declare namespace Office {
      * [Api set: Mailbox 1.0]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
      *
-     * Applicable Outlook mode: Read
+     * <tr><td>Applicable Outlook mode</td><td>Read</td></tr></table>
      */
     interface TaskSuggestion {
         /**
@@ -13696,9 +13593,9 @@ declare namespace Office {
      * [Api set: Mailbox 1.1]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
      *
-     * Applicable Outlook mode: Compose
+     * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr></table>
      */
     interface Time {
         /**
@@ -13709,9 +13606,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr></table>
          * 
          * In addition to the main signature, this method also has this signature:
          * 
@@ -13730,9 +13627,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr></table>
          *
          * @param callback When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult.
          */
@@ -13747,11 +13644,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: InvalidEndTime - The appointment end time is before the appointment start time.
+         * <tr><td>Errors</td><td>InvalidEndTime - The appointment end time is before the appointment start time.</td></tr></table>
          * 
          * In addition to the main signature, this method also has these signatures:
          * 
@@ -13777,11 +13674,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: InvalidEndTime - The appointment end time is before the appointment start time.
+         * <tr><td>Errors</td><td>InvalidEndTime - The appointment end time is before the appointment start time.</td></tr></table>
          *
          * @param dateTime A date-time object in Coordinated Universal Time (UTC).
          */
@@ -13796,11 +13693,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: InvalidEndTime - The appointment end time is before the appointment start time.
+         * <tr><td>Errors</td><td>InvalidEndTime - The appointment end time is before the appointment start time.</td></tr></table>
          *
          * @param dateTime A date-time object in Coordinated Universal Time (UTC).
          * @param options An object literal that contains one or more of the following properties.
@@ -13817,11 +13714,11 @@ declare namespace Office {
          * [Api set: Mailbox 1.1]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadWriteItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadWriteItem</td></tr>
          *
-         * Applicable Outlook mode: Compose
+         * <tr><td>Applicable Outlook mode</td><td>Compose</td></tr>
          *
-         * Errors: InvalidEndTime - The appointment end time is before the appointment start time.
+         * <tr><td>Errors</td><td>InvalidEndTime - The appointment end time is before the appointment start time.</td></tr></table>
          *
          * @param dateTime A date-time object in Coordinated Universal Time (UTC).
          * @param callback When the method completes, the function passed in the callback parameter is called with a single parameter of type AsyncResult. If setting the date and time fails, the asyncResult.error property will contain an error code.
@@ -13835,13 +13732,13 @@ declare namespace Office {
      * [Api set: Mailbox 1.0]
      *
      * @remarks
-     * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+     * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
      *
-     * Applicable Outlook mode: Compose or read
+     * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
      */
     interface UserProfile {
         /**
-         * Gets the account type of the user associated with the mailbox. The possible values are listed in the following table.
+         * Gets the account type of the user associated with the mailbox. 
          *
          * Note: This member is currently only supported in Outlook 2016 for Mac, build 16.9.1212 and greater.
          *
@@ -13849,6 +13746,12 @@ declare namespace Office {
          *
          * @remarks
          *
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
+         *
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
+         *
+         * The possible account types are listed in the following table.
+         * 
          * <table>
          *   <tr>
          *     <th>Value</th>
@@ -13871,10 +13774,6 @@ declare namespace Office {
          *     <td>The mailbox is associated with a personal Outlook.com account.</td>
          *   </tr>
          * </table>
-         *
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
-         *
-         * Applicable Outlook mode: Compose or read
          */
         accountType: string;
         /**
@@ -13883,9 +13782,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.0]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         displayName: string;
         /**
@@ -13894,9 +13793,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.0]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         emailAddress: string;
         /**
@@ -13905,9 +13804,9 @@ declare namespace Office {
          * [Api set: Mailbox 1.0]
          *
          * @remarks
-         * {@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}: ReadItem
+         * <table><tr><td>{@link https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions | Minimum permission level}</td><td>ReadItem</td></tr>
          *
-         * Applicable Outlook mode: Compose or read
+         * <tr><td>Applicable Outlook mode</td><td>Compose or read</td></tr></table>
          */
         timeZone: string;
     }
@@ -13929,7 +13828,9 @@ declare namespace Office {
 ////////////////////////////////////////////////////////////////
 
 declare namespace OfficeExtension {
-    /** An abstract proxy object that represents an object in an Office document. You create proxy objects from the context (or from other proxy objects), add commands to a queue to act on the object, and then synchronize the proxy object state with the document by calling `context.sync()`. */
+    /** An abstract proxy object that represents an object in an Office document. 
+     * You create proxy objects from the context (or from other proxy objects), add commands to a queue to act on the object, and then synchronize the proxy object state with the document by calling `context.sync()`.
+     */
     class ClientObject {
         /** The request context associated with the object */
         context: ClientRequestContext;
@@ -13996,7 +13897,7 @@ declare namespace OfficeExtension {
         session?: RequestUrlAndHeaderInfo | T;
     
         /**
-         *  A previously-created context, or API object, or array of objects. The batch will use the same RequestContext as the passed-in object, which means that any changes applied to the object will be picked up by "context.sync()".
+         *  A previously-created context, or API object, or array of objects. The batch will use the same RequestContext as the passed-in object, which means that any changes applied to the object will be picked up by `context.sync()`.
          */
         previousObjects?: ClientObject | ClientObject[] | ClientRequestContext;
     }
@@ -14011,7 +13912,7 @@ declare namespace OfficeExtension {
         pendingStatements: string[];
     }
 
-    /** An abstract RequestContext object that facilitates requests to the host Office application. The `Excel.run and `Word.run` methods provide a request context. */
+    /** An abstract RequestContext object that facilitates requests to the host Office application. The `Excel.run` and `Word.run` methods provide a request context. */
     class ClientRequestContext {
         constructor(url?: string);
 
@@ -14447,31 +14348,31 @@ declare namespace Excel {
     }
     /**
      * Executes a batch script that performs actions on the Excel object model, using a new RequestContext. When the promise is resolved, any tracked objects that were automatically allocated during execution will be released.
-     * @param batch - A function that takes in a RequestContext and returns a promise (typically, just the result of "context.sync()"). The context parameter facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, the RequestContext is required to get access to the Excel object model from the add-in.
+     * @param batch - A function that takes in a RequestContext and returns a promise (typically, just the result of `context.sync()`). The context parameter facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, the RequestContext is required to get access to the Excel object model from the add-in.
      */
     function run<T>(batch: (context: Excel.RequestContext) => Promise<T>): Promise<T>;
     /**
      * Executes a batch script that performs actions on the Excel object model, using the RequestContext of a previously-created object. When the promise is resolved, any tracked objects that were automatically allocated during execution will be released.
-     * @param contextObject - A previously-created object. The batch will use the same RequestContext as the passed-in object, which means that any changes applied to the object will be picked up by "context.sync()".
-     * @param batch - A function that takes in a RequestContext and returns a promise (typically, just the result of "context.sync()"). The context parameter facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, the RequestContext is required to get access to the Excel object model from the add-in.
+     * @param contextObject - A previously-created object. The batch will use the same RequestContext as the passed-in object, which means that any changes applied to the object will be picked up by `context.sync()`.
+     * @param batch - A function that takes in a RequestContext and returns a promise (typically, just the result of `context.sync()`). The context parameter facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, the RequestContext is required to get access to the Excel object model from the add-in.
      */
     function run<T>(contextObject: OfficeExtension.ClientRequestContext, batch: (context: Excel.RequestContext) => Promise<T>): Promise<T>;
     /**
      * Executes a batch script that performs actions on the Excel object model, using the RequestContext of a previously-created API object. When the promise is resolved, any tracked objects that were automatically allocated during execution will be released.
-     * @param object - A previously-created API object. The batch will use the same RequestContext as the passed-in object, which means that any changes applied to the object will be picked up by "context.sync()".
-     * @param batch - A function that takes in a RequestContext and returns a promise (typically, just the result of "context.sync()"). The context parameter facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, the RequestContext is required to get access to the Excel object model from the add-in.
+     * @param object - A previously-created API object. The batch will use the same RequestContext as the passed-in object, which means that any changes applied to the object will be picked up by `context.sync()`.
+     * @param batch - A function that takes in a RequestContext and returns a promise (typically, just the result of `context.sync()`). The context parameter facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, the RequestContext is required to get access to the Excel object model from the add-in.
      */
     function run<T>(object: OfficeExtension.ClientObject, batch: (context: Excel.RequestContext) => Promise<T>): Promise<T>;
     /**
      * Executes a batch script that performs actions on the Excel object model, using the RequestContext of previously-created API objects.
-     * @param objects - An array of previously-created API objects. The array will be validated to make sure that all of the objects share the same context. The batch will use this shared RequestContext, which means that any changes applied to these objects will be picked up by "context.sync()".
-     * @param batch - A function that takes in a RequestContext and returns a promise (typically, just the result of "context.sync()"). The context parameter facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, the RequestContext is required to get access to the Excel object model from the add-in.
+     * @param objects - An array of previously-created API objects. The array will be validated to make sure that all of the objects share the same context. The batch will use this shared RequestContext, which means that any changes applied to these objects will be picked up by `context.sync()`.
+     * @param batch - A function that takes in a RequestContext and returns a promise (typically, just the result of `context.sync()`). The context parameter facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, the RequestContext is required to get access to the Excel object model from the add-in.
      */
     function run<T>(objects: OfficeExtension.ClientObject[], batch: (context: Excel.RequestContext) => Promise<T>): Promise<T>;
     /**
     * Executes a batch script that performs actions on the Excel object model, using the RequestContext of a previously-created API object. When the promise is resolved, any tracked objects that were automatically allocated during execution will be released.
     * @param options - The additional options for this Excel.run which specify previous objects, whether to delay the request for cell edit, session info, etc.
-    * @param batch - A function that takes in a RequestContext and returns a promise (typically, just the result of "context.sync()"). The context parameter facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, the RequestContext is required to get access to the Excel object model from the add-in.
+    * @param batch - A function that takes in a RequestContext and returns a promise (typically, just the result of `context.sync()`). The context parameter facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, the RequestContext is required to get access to the Excel object model from the add-in.
      */
     function run<T>(options: Excel.RunOptions, batch: (context: Excel.RequestContext) => Promise<T>): Promise<T>;
     /**
@@ -15076,7 +14977,7 @@ declare namespace Excel {
          *
          * [Api set: ExcelApi 1.1]
          */
-        getSelectedRange(allowMultiAreas?: boolean): Excel.Range;
+        getSelectedRange(): Excel.Range;
         /**
          * Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.
          *
@@ -16260,7 +16161,7 @@ declare namespace Excel {
          *
          * [Api set: ExcelApi 1.1]
          */
-        select(allowMultiAreas?: boolean): void;
+        select(): void;
         /**
          *
          * Displays the card for an active cell if it has rich value content.
